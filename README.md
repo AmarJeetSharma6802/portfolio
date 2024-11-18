@@ -1,2 +1,2 @@
 # portfolio
-portfolio link = https://portfolio-5y00jil8e-amarjeetsharma6802s-projects.vercel.app/
+portfolio link = https://portfolio-beta-dusky-34.vercel.app/
