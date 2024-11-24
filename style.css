@@ -952,6 +952,13 @@ padding: 11px 12px;
 text-decoration: none;
 font-size: 14px;
 }
+  #resume {
+        width: 350px;
+        height: 450px;
+    }
+      .close-btn {
+        right: 0rem;
+    }
 }
 
 @media (max-width:338px) {
@@ -1149,6 +1156,13 @@ height: 6px;
 font-size: 1.2rem;
 margin-left: 0;
 }
+#resume {
+        width: 320px;
+        height: 400px;
+    }
+.close-btn {
+        right: 0rem;
+    }
 }
 
 @media (min-width: 468px) and (max-width: 485px){
