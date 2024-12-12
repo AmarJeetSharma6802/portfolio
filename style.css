@@ -224,7 +224,7 @@ font-weight: 500;
 /* float: right; */
 margin-left: 2rem;
 margin-top: 2rem;
-
+border-radius:20px;
 background-image: url(https://mohit-portfolio.vercel.app/assets/blob.da2ded7b.svg);
 background-repeat: no-repeat;
 background-position: center;
