@@ -577,7 +577,7 @@ color: red;
       right: 5rem;
       top: 65px;
       opacity: 0;
-      transform: translateY(-100%);
+      transform: translateY(-120%);
       transition: opacity 0.6s, transform 0.6s;
       background-color:black;
       border-radius: 10px;
