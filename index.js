@@ -89,6 +89,8 @@ navLinks.forEach(link => {
 
     // Add 'active' class to the clicked link
     this.classList.add('active');
+    nav.classList.remove("show");
+  menu.classList.remove("active");
   });
 });
 });
