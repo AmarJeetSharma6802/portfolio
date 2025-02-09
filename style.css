@@ -1191,3 +1191,8 @@ margin-left: 0;
   }
   
 }
+@media (min-width: 650px) and (max-width: 850px){
+  .projects {
+    padding: 1.5rem;
+}
+}
