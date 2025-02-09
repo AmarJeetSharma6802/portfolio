@@ -1005,6 +1005,11 @@ font-size: 17px;
 .about-me img{
   width:95%;
 }
+  .projects {
+    min-height: 100vh;
+    padding: 1rem;
+    border-bottom: 8px solid red;
+}
 }
 
 
