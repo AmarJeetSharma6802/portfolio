@@ -724,6 +724,7 @@ right: 6rem;
 .img-content {
   grid-template-columns: repeat(2, 1fr); 
 }
+  
 }
 @media (max-width: 360px) {
 .img-content {
@@ -845,7 +846,7 @@ cursor: pointer;
 @media (max-width:461px) {
 .form {
   width: 272px;
-  
+}
 }
 @media (max-width:344px) {
 .form {
@@ -859,7 +860,7 @@ input{
 }
 
 
-}
+
 
 @media (max-width:1200px) {
 .grid-from {
@@ -1168,6 +1169,9 @@ margin-left: 0;
 .close-btn {
         right: 0rem;
     }
+  #config{
+    margin-left:0rem;
+  }
 }
 
 @media (min-width: 468px) and (max-width: 485px){
