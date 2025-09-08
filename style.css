@@ -16,7 +16,10 @@ body {
 }
 
 .dark-mode {
-  background-color:#212121;
+/*   background-color:#212121; */
+ background: radial-gradient(ellipse 80% 70% at 50% 0, rgba(120, 180, 255, .25), transparent 70%), #000000;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   color: #fff;
 }
 
@@ -39,7 +42,9 @@ body {
 }
 
 .dark-mode .header {
-  background: rgb(48, 48, 48);
+/*   background: rgb(48, 48, 48); */
+ background: rgb(26, 25, 25);
+
 }
 
 .logo-label{
@@ -745,7 +750,10 @@ background: rgb(231, 238, 246);
 border-top: 8px solid red;
 }
 .dark-mode .contact{
-background-color: rgb(20, 20, 20);
+/* background-color: rgb(20, 20, 20); */
+background: radial-gradient(ellipse 80% 70% at 50% 0, rgba(120, 180, 255, .25), transparent 70%), #000000;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 .grid-from{
 display: grid;
@@ -1206,4 +1214,5 @@ margin-left: 0;
     padding-left: 5rem;
 }
 }
+
 
