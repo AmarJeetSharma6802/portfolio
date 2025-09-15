@@ -1025,7 +1025,7 @@ font-size: 17px;
 /* first-page  */
 @media (min-width: 950px) and (max-width: 1250px){
 .my-details {
-  padding-top: 5rem;
+  padding-top: 8rem;
 }
 .left-width{
 width: 65%
@@ -1042,6 +1042,11 @@ font-size:28px;
 .wave-text #name{
 font-size: 28px;
 }
+  .introduction{
+    padding-top:12rem;
+}
+  #config{
+    margin-top:5rem;
 }
 
 @media (min-width: 1250px) and (max-width: 1354px){
@@ -1214,5 +1219,6 @@ margin-left: 0;
     padding-left: 5rem;
 }
 }
+
 
 
