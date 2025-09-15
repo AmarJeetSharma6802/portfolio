@@ -1048,7 +1048,22 @@ font-size: 28px;
   #config{
     margin-top:5rem;
 }
-
+  .inner-part {
+    max-width: 95vw;
+}
+  .my-details {
+    padding-left: 4rem;
+}
+      .mydetails-h1 {
+        font-size: 60px;
+    }
+  #name-1:{
+     font-size:36px;
+  }
+  .wave-text #name{
+    font-size:36px;
+}
+}
 @media (min-width: 1250px) and (max-width: 1354px){
 .mydetails-h1 {
   font-family: Ubuntu, sans-serif;
@@ -1135,6 +1150,12 @@ color: red;
   font-size: 62px;
   /* font-weight: 600; */
 }
+  .introduction {
+    padding-top: 11rem;
+}
+  .inner-part {
+    max-width: 100vw;
+}
 }
 @media (min-width: 1354px) and (max-width: 1464px){
 .mydetails-h1 {
@@ -1219,6 +1240,7 @@ margin-left: 0;
     padding-left: 5rem;
 }
 }
+
 
 
 
