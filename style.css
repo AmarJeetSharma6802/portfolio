@@ -525,7 +525,7 @@ border-radius: 10px;
 /* Skill item box styling */
 .img {
 width: 110px;
-height: 140px;
+height: 150px;
 background: #f0f0f5;
 border-radius: 8px;
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -1243,6 +1243,7 @@ margin-left: 0;
     padding-left: 5rem;
 }
 }
+
 
 
 
