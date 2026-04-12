@@ -421,10 +421,16 @@ font-family: Ubuntu, sans-serif;
   color: red;
 }
 /* Grid container for project cards */
-.grid-project {
+/* .grid-project {
 display: grid;
 grid-template-columns: repeat(3, 1fr); /* 3 columns by default */
 gap: 2rem; /* Space between grid items */
+} */
+
+.grid-project {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
 }
 
 /* Individual project card styling */
