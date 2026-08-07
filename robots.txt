@@ -1,0 +1,30 @@
+# robots.txt — https://portfolio-beta-dusky-34.vercel.app/
+
+# Search engines: full access
+User-agent: *
+Allow: /
+
+# AI answer engines — allowed so the profile can appear in AI overviews
+# and assistant answers. Remove a block to opt that crawler out.
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://portfolio-beta-dusky-34.vercel.app/sitemap.xml
