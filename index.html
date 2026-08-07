@@ -648,7 +648,7 @@
             </div>
             <div class="stat-card">
               <span class="stat-icon"><i class="fa-brands fa-github"></i></span>
-              <strong>100+</strong>
+              <strong>50+</strong>
               <p>GitHub Repositories</p>
             </div>
           </div>
@@ -1093,32 +1093,105 @@
     </div>
   </div>
 
-  <div class="contact" id="contact">
-    <h2 class="contact-h2">Cont<span>act</span></h2>
+  <section class="contact" id="contact">
+    <div class="section-head">
+      <span class="eyebrow">Contact</span>
+      <h2 class="contact-h2">Let's work <span>together</span></h2>
+      <p class="section-sub">Have a project, a role or an idea you want built? Send me the details and I'll get back to
+        you.</p>
+    </div>
+
     <div class="grid-from">
-      <div class="image">
-        <img src="https://res.cloudinary.com/futurecoder/image/upload/v1731910388/uploads/xp7xisrivvrdarn1xwgu.jpg"
-          alt="" id="contact-img">
-      </div>
+      <aside class="contact-panel">
+        <span class="status-pill"><span class="pulse-dot"></span> Available for new work</span>
+        <h3>Have a project in mind?</h3>
+        <p class="panel-lead">Tell me what you're building — the stack, the timeline, the problem. I read every message
+          and usually reply the same day.</p>
+
+        <ul class="contact-list">
+          <li>
+            <span class="contact-ico"><i class="fa-regular fa-envelope"></i></span>
+            <div>
+              <small>Email</small>
+              <a class="email-link"
+                href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=amarsharma6802@gmail.com&amp;su=Project%20enquiry"
+                target="_blank" rel="noopener" data-email="amarsharma6802@gmail.com">amarsharma6802@gmail.com</a>
+            </div>
+          </li>
+          <li>
+            <span class="contact-ico"><i class="fa-solid fa-location-dot"></i></span>
+            <div>
+              <small>Location</small>
+              <strong>New Delhi, India · Remote friendly</strong>
+            </div>
+          </li>
+          <li>
+            <span class="contact-ico"><i class="fa-regular fa-clock"></i></span>
+            <div>
+              <small>Response time</small>
+              <strong>Usually within 24 hours</strong>
+            </div>
+          </li>
+          <li>
+            <span class="contact-ico"><i class="fa-solid fa-briefcase"></i></span>
+            <div>
+              <small>Open to</small>
+              <strong>Full-time · Freelance · Contract</strong>
+            </div>
+          </li>
+        </ul>
+
+        <div class="panel-socials">
+          <a href="https://github.com/AmarJeetSharma6802" target="_blank" rel="noopener" aria-label="GitHub"><i
+              class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/amarjeet-sharma-full-stack/" target="_blank" rel="noopener"
+            aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a class="email-link"
+            href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=amarsharma6802@gmail.com&amp;su=Project%20enquiry"
+            target="_blank" rel="noopener" data-email="amarsharma6802@gmail.com" aria-label="Email"><i
+              class="fa-regular fa-envelope"></i></a>
+        </div>
+      </aside>
+
       <div class="form">
-        <form id="form" onsubmit="handleSubmit(event)">
-          <label for="" class="input-label">Name</label>
-          <input type="text" id="nameId" placeholder="FULL NAME" name="name">
+        <form id="form" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <input type="text" id="nameId" name="name" placeholder=" " autocomplete="name">
+              <label for="nameId">Full name</label>
+              <span class="field-error"></span>
+            </div>
+            <div class="field">
+              <input type="tel" id="phone" name="phone" placeholder=" " autocomplete="tel">
+              <label for="phone">Phone number</label>
+              <span class="field-error"></span>
+            </div>
+          </div>
 
-          <label for="" class="input-label">Email</label>
-          <input type="email" placeholder="EMAIL" name="email" id="email">
+          <div class="field">
+            <input type="email" id="email" name="email" placeholder=" " autocomplete="email">
+            <label for="email">Email address</label>
+            <span class="field-error"></span>
+          </div>
 
-          <label for="" class="input-label">Number</label>
-          <input type="text" placeholder="NUMBER" name="phone" id="phone">
+          <div class="field field-grow">
+            <textarea name="message" id="message" rows="6" placeholder=" "></textarea>
+            <label for="message">Tell me about the project</label>
+            <span class="field-error"></span>
+          </div>
 
-          <label for="" class="input-label">Message</label>
-          <textarea name="message" id="message" cols="51" rows="10" placeholder="MESSAGE"></textarea>
+          <button type="submit" id="submit">
+            <span class="btn-label">Send message <i class="fa-solid fa-paper-plane"></i></span>
+            <span class="btn-spinner"></span>
+          </button>
 
-          <button type="submit" id="submit">Submit</button>
+          <p class="form-note"><i class="fa-solid fa-lock"></i> Your details stay private — used only to reply to you.
+          </p>
+          <p class="form-status" role="status"></p>
         </form>
       </div>
     </div>
-  </div>
+  </section>
 
   <div class="footer">
     <div class="footer-content">
