@@ -1180,6 +1180,27 @@ html {
   margin: 1.1rem 1.1rem .4rem;
 }
 
+.project-badge {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 8px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+
+.project-badge.badge-muted {
+  background: var(--surface-2);
+  border-color: var(--border-strong);
+  color: var(--muted);
+}
+
 .projects-para {
   font-size: .9rem;
   color: var(--muted);
