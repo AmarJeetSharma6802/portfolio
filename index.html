@@ -62,7 +62,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
   <!--   microSoft clarity -->
   <script type="text/javascript">
@@ -270,7 +269,7 @@
             "url": "https://team-sathi.onrender.com/",
             "applicationCategory": "BusinessApplication",
             "operatingSystem": "Web, Windows, macOS",
-            "description": "Multi-tenant workforce CRM for startups and remote teams: role-based access, attendance and leave tracking, an Electron desktop agent, Razorpay subscription billing and scheduled automation. Currently in testing.",
+            "description": "Multi-tenant workforce CRM for startups and remote teams, built single-handedly by Amarjeet Sharma — the complete backend plus the design and most of the frontend. Role-based access, attendance and leave tracking, an Electron desktop agent, Razorpay subscription billing and scheduled automation. Currently in testing.",
             "author": {
               "@id": "https://portfolio-beta-dusky-34.vercel.app/#amarjeet-sharma"
             }
@@ -353,34 +352,36 @@
 </head>
 
 <body>
-  <div class="head-top" id="home">
-    <header class="header">
-      <a href="#home" class="logo-label"><span class="logo-mark">AS</span><span class="name">Amarjeet </span><span
-          class="surname">Sharma</span></a>
-      <nav class="nav">
-        <ul class="nav-ul">
-          <li class="nav-li "> <a href="#home" class="nav-a active">Home</a></li>
-          <li class="nav-li"><a href="#about" class="nav-a">About</a></li>
-          <li class="nav-li"><a href="#projects" class="nav-a">Projects</a></li>
-          <li class="nav-li"><a href="#skills" class="nav-a">Skills</a></li>
-          <li class="nav-li"><a href="#contact" class="nav-a">Contact</a></li>
+  <header class="header">
+    <a href="#home" class="logo-label"><span class="logo-mark">AS</span><span class="name">Amarjeet </span><span
+        class="surname">Sharma</span></a>
+    <nav class="nav">
+      <ul class="nav-ul">
+        <li class="nav-li "> <a href="#home" class="nav-a active">Home</a></li>
+        <li class="nav-li"><a href="#about" class="nav-a">About</a></li>
+        <li class="nav-li"><a href="#projects" class="nav-a">Projects</a></li>
+        <li class="nav-li"><a href="#skills" class="nav-a">Skills</a></li>
+        <li class="nav-li"><a href="#contact" class="nav-a">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="toggle-dark-btn">
+      <div class="toggle-btn">
+        <!-- Theme toggle: dark by default, click switches to light -->
+        <button class="dark-mode-btn" id="dark-mode-btn" type="button" aria-label="Switch theme">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+        <a href="#contact" class="nav-cta">Hire Me <i class="fa-solid fa-arrow-right"></i></a>
+        <ul class="hamburger-menu" id="hamburger-menu">
+          <li class="hamburger"></li>
+          <li class="hamburger"></li>
+          <li class="hamburger"></li>
         </ul>
-      </nav>
-      <div class="toggle-dark-btn">
-        <div class="toggle-btn">
-          <!-- Theme toggle: dark by default, click switches to light -->
-          <button class="dark-mode-btn" id="dark-mode-btn" type="button" aria-label="Switch theme">
-            <i class="fa-solid fa-sun"></i>
-          </button>
-          <a href="#contact" class="nav-cta">Hire Me <i class="fa-solid fa-arrow-right"></i></a>
-          <ul class="hamburger-menu" id="hamburger-menu">
-            <li class="hamburger"></li>
-            <li class="hamburger"></li>
-            <li class="hamburger"></li>
-          </ul>
-        </div>
       </div>
-    </header>
+    </div>
+  </header>
+
+  <main id="main">
+  <div class="head-top" id="home">
 
     <div class="introduction">
       <div class="inner-part">
@@ -573,8 +574,10 @@
                   <ul>
                     <li>Build and maintain full-stack features across Next.js interfaces, Node.js/Express REST APIs and
                       MongoDB data models.</li>
-                    <li>Lead development of <strong>Team Sathi</strong>, a multi-tenant attendance and productivity
-                      platform with an Electron desktop agent for Windows and macOS.</li>
+                    <li>Built <strong>Team Sathi</strong> single-handedly — a multi-tenant attendance and
+                      productivity platform with an Electron desktop agent for Windows and macOS. I own the whole
+                      backend (data modelling, REST APIs, auth, billing, cron jobs) and did the design and most of
+                      the frontend myself.</li>
                     <li>Implement authentication, role-based access control, Razorpay billing and Twilio/Nodemailer
                       alerts.</li>
                     <li>Ship releases end to end: implementation, code review, deployment and post-release monitoring.
@@ -611,10 +614,12 @@
             <div class="tab-panel" data-panel="proud">
               <ul class="stack-list">
                 <li class="about-li">
-                  <strong>Team Sathi — Workforce CRM</strong>
-                  <p>Three-tier role system, JWT auth, plan-based seat limits, activity tracking through an Electron
-                    agent and cron-driven attendance automation. Currently in testing at
-                    <a href="https://team-sathi.onrender.com/" target="_blank">team-sathi.onrender.com</a>.</p>
+                  <strong>Team Sathi — Workforce CRM (solo build)</strong>
+                  <p>My biggest project so far, built on my own: the entire backend — data models, REST APIs, auth,
+                    billing and cron automation — plus the design and most of the frontend. Three-tier role system,
+                    JWT auth, plan-based seat limits and activity tracking through an Electron agent. Currently in
+                    testing at <a href="https://team-sathi.onrender.com/" target="_blank">team-sathi.onrender.com</a>.
+                  </p>
                 </li>
                 <li class="about-li">
                   <strong>Elite Virtual Employee — Company website</strong>
@@ -677,32 +682,32 @@
         <div class="why-grid">
           <div class="why-card">
             <span class="why-icon c1"><i class="fa-solid fa-rocket"></i></span>
-            <h5>End-to-End Ownership</h5>
+            <h4>End-to-End Ownership</h4>
             <p>I take a product from an empty repo to live traffic — UI, API, database, deployment and monitoring.</p>
           </div>
           <div class="why-card">
             <span class="why-icon c2"><i class="fa-solid fa-gauge-high"></i></span>
-            <h5>Production Mindset</h5>
+            <h4>Production Mindset</h4>
             <p>Technical SEO, Core Web Vitals, caching, image optimization and error tracking with Sentry.</p>
           </div>
           <div class="why-card">
             <span class="why-icon c3"><i class="fa-solid fa-robot"></i></span>
-            <h5>AI &amp; Automation</h5>
+            <h4>AI &amp; Automation</h4>
             <p>AI API integration, prompt-based systems and n8n workflows that cut out repetitive manual work.</p>
           </div>
           <div class="why-card">
             <span class="why-icon c4"><i class="fa-solid fa-cubes"></i></span>
-            <h5>Clean, Scalable Code</h5>
+            <h4>Clean, Scalable Code</h4>
             <p>Modular components, typed API helpers and predictable contracts that stay maintainable.</p>
           </div>
           <div class="why-card">
             <span class="why-icon c5"><i class="fa-solid fa-bolt"></i></span>
-            <h5>Fast Learner</h5>
+            <h4>Fast Learner</h4>
             <p>Picked up Vapi, Razorpay, Electron and Sentry directly on live production work.</p>
           </div>
           <div class="why-card">
             <span class="why-icon c6"><i class="fa-solid fa-users"></i></span>
-            <h5>Remote Ready</h5>
+            <h4>Remote Ready</h4>
             <p>Clear written communication, documented decisions and independent delivery in distributed teams.</p>
           </div>
         </div>
@@ -735,14 +740,15 @@
         <a href="https://team-sathi.onrender.com/" target="_blank"> <img
             src="https://res.cloudinary.com/futurecoder/image/upload/v1788002199/Screenshot_2026-08-29_164403_gjaexi.png"
             alt="Team Sathi dashboard" class="projects-img"></a>
-        <div class="project-title">Team Sathi — Workforce CRM <span class="project-badge">In testing</span></div>
-        <p class="projects-para">A multi-tenant workforce CRM for startups and remote teams — every core module is
-          built and the product is now in testing. Super admin, company admin and employee roles with JWT auth and
-          seat limits, attendance with breaks and leaves, an Electron desktop agent for activity tracking, Razorpay
-          subscription billing and cron-driven automation. Next.js, TypeScript, MongoDB, Electron, Cloudinary.</p>
+        <div class="project-title">Team Sathi — Workforce CRM <span class="project-badge">Solo build</span><span class="project-badge badge-muted">In testing</span></div>
+        <p class="projects-para"><strong>Built single-handedly</strong> — the complete backend end to end, plus the
+          design and most of the frontend. A multi-tenant workforce CRM for startups and remote teams, now in testing
+          with every core module built: super admin, company admin and employee roles with JWT auth and seat limits,
+          attendance with breaks and leaves, an Electron desktop agent for activity tracking, Razorpay subscription
+          billing and cron-driven automation. Next.js, TypeScript, Node.js, MongoDB, Electron, Cloudinary.</p>
         <div class="project-icon" id="icon-project">
-          <a href="https://team-sathi.onrender.com/" target="_blank" class="github"><i class="fa-solid fa-eye"></i></a>
-          <a href="https://team-sathi.onrender.com/" target="_blank" class="github"
+          <a aria-label="Open the Team Sathi — Workforce CRMIn testing live site" href="https://team-sathi.onrender.com/" target="_blank" class="github"><i class="fa-solid fa-eye"></i></a>
+          <a aria-label="Team Sathi — Workforce CRMIn testing — private repo, opens the live site" href="https://team-sathi.onrender.com/" target="_blank" class="github"
             title="Private repo — opens the live site"><i class="fa-brands fa-github"></i></a>
         </div>
       </div>
@@ -756,8 +762,8 @@
           with Next.js and Node.js — service pages with dynamic SEO metadata, lead capture APIs with server-side
           validation and email routing, plus analytics and error monitoring wired up in production.</p>
         <div class="project-icon" id="icon-project">
-          <a href="https://elitevirtualemployee.com/" target="_blank" class="github"><i class="fa-solid fa-eye"></i></a>
-          <a href="https://elitevirtualemployee.com/" target="_blank" class="github"
+          <a aria-label="Open the Elite Virtual Employee live site" href="https://elitevirtualemployee.com/" target="_blank" class="github"><i class="fa-solid fa-eye"></i></a>
+          <a aria-label="Elite Virtual Employee — private repo, opens the live site" href="https://elitevirtualemployee.com/" target="_blank" class="github"
             title="Private repo — opens the live site"><i class="fa-brands fa-github"></i></a>
         </div>
       </div>
@@ -771,8 +777,8 @@
           technical SEO with structured data, Vapi voice AI for inbound enquiries, and full observability with Sentry,
           Google Tag Manager and Microsoft Clarity.</p>
         <div class="project-icon" id="icon-project">
-          <a href="https://www.interiomate.com/" target="_blank" class="github"><i class="fa-solid fa-eye"></i></a>
-          <a href="https://www.interiomate.com/" target="_blank" class="github" title="Private repo — opens the live site"><i
+          <a aria-label="Open the Interiomate — Interior Design live site" href="https://www.interiomate.com/" target="_blank" class="github"><i class="fa-solid fa-eye"></i></a>
+          <a aria-label="Interiomate — Interior Design — private repo, opens the live site" href="https://www.interiomate.com/" target="_blank" class="github" title="Private repo — opens the live site"><i
               class="fa-brands fa-github"></i></a>
         </div>
       </div>
@@ -786,9 +792,9 @@
           GSAP. Integrated backend APIs, interactive animations, and dynamic SEO with script tags for maximum visibility
           and engagement.</p>
         <div class="project-icon" id="icon-project">
-          <a href="https://crane-website-woad.vercel.app/" target="_blank" class="github"><i
+          <a aria-label="Open the Pal Engineering live site" href="https://crane-website-woad.vercel.app/" target="_blank" class="github"><i
               class="fa-solid fa-eye"></i></a>
-          <a href="https://crane-website-woad.vercel.app/" title="Private repo — opens the live site" target="_blank" class="github"><i class="fa-brands fa-github"></i></a>
+          <a aria-label="Pal Engineering — private repo, opens the live site" href="https://crane-website-woad.vercel.app/" title="Private repo — opens the live site" target="_blank" class="github"><i class="fa-brands fa-github"></i></a>
         </div>
       </div>
 
@@ -801,9 +807,9 @@
           management, NextAuth authentication, Swiper UI, email subscriptions via Nodemailer, and automated confirmation
           and update emails for new or modified listings.</p>
         <div class="project-icon" id="icon-project-real">
-          <a href="https://real-estate-eta-snowy.vercel.app/" target="_blank" class="github"><i
+          <a aria-label="Open the Real-Estate Platform live site" href="https://real-estate-eta-snowy.vercel.app/" target="_blank" class="github"><i
               class="fa-solid fa-eye"></i></a>
-          <a href="https://real-estate-eta-snowy.vercel.app/" title="Private repo — opens the live site" target="_blank" class="github"><i class="fa-brands fa-github"></i></a>
+          <a aria-label="Real-Estate Platform — private repo, opens the live site" href="https://real-estate-eta-snowy.vercel.app/" title="Private repo — opens the live site" target="_blank" class="github"><i class="fa-brands fa-github"></i></a>
         </div>
       </div>
 
@@ -816,8 +822,8 @@
           Features role-based flows, real-time ride management, and upcoming AI voice booking to enhance accessibility
           and user experience.</p>
         <div class="project-icon" id="icon-project-real">
-          <a href="https://rido-booking.vercel.app/" target="_blank" class="github"><i class="fa-solid fa-eye"></i></a>
-          <a href="https://rido-booking.vercel.app/" title="Private repo — opens the live site" target="_blank" class="github"><i class="fa-brands fa-github"></i></a>
+          <a aria-label="Open the Rido Booking live site" href="https://rido-booking.vercel.app/" target="_blank" class="github"><i class="fa-solid fa-eye"></i></a>
+          <a aria-label="Rido Booking — private repo, opens the live site" href="https://rido-booking.vercel.app/" title="Private repo — opens the live site" target="_blank" class="github"><i class="fa-brands fa-github"></i></a>
         </div>
       </div>
 
@@ -830,24 +836,24 @@
           MongoDB Atlas. Features dynamic galleries, secure form handling, and complete backend integration. Designed
           for performance, SEO-friendly structure, and customizable for clients.</p>
         <div class="project-icon" id="icon-project">
-          <a href="https://wedding-photo-graphy.vercel.app/" target="_blank" class="github"><i
+          <a aria-label="Open the Wedding Photography Website live site" href="https://wedding-photo-graphy.vercel.app/" target="_blank" class="github"><i
               class="fa-solid fa-eye"></i></a>
-          <a href="https://wedding-photo-graphy.vercel.app/" title="Private repo — opens the live site" target="_blank" class="github"><i class="fa-brands fa-github"></i></a>
+          <a aria-label="Wedding Photography Website — private repo, opens the live site" href="https://wedding-photo-graphy.vercel.app/" title="Private repo — opens the live site" target="_blank" class="github"><i class="fa-brands fa-github"></i></a>
         </div>
       </div>
 
       <div class="grid-box">
         <a href="https://nike-clone-orpin.vercel.app/" target="_blank"> <img
             src="https://res.cloudinary.com/futurecoder/image/upload/v1736487388/uploads/zgo0kcmbbgfvtztt29rm.png"
-            width="100%" class="projects-img"></a>
+            alt="Nike Clone e-commerce project" width="100%" class="projects-img"></a>
         <div class="project-title">Nike Clone</div>
         <p class="projects-para">Developed a sleek Nike e-commerce clone with React and Redux Toolkit. Designed features
           like product display, shopping cart, and checkout, ensuring a seamless, responsive experience and optimized
           state management. Technologies: React, Redux, JavaScript.</p>
         <div class="project-icon" id="icon-project">
-          <a href="https://nike-clone-orpin.vercel.app/" target="_blank" class="github"><i
+          <a aria-label="Open the Nike Clone live site" href="https://nike-clone-orpin.vercel.app/" target="_blank" class="github"><i
               class="fa-solid fa-eye"></i></a>
-          <a href="https://github.com/AmarJeetSharma6802/nike-clone" target="_blank" class="github"><i
+          <a aria-label="Nike Clone source code on GitHub" href="https://github.com/AmarJeetSharma6802/nike-clone" target="_blank" class="github"><i
               class="fa-brands fa-github"></i></a>
         </div>
       </div>
@@ -861,9 +867,9 @@
           pharmacy, baby essentials, pet food, and home products. Integrated fast load times, smooth UI, and SEO
           optimization for better search ranking and enhanced user experience.</p>
         <div class="project-icon" id="icon-project">
-          <a href="https://blinkit-clone-c3b3.onrender.com/" target="_blank" class="github"><i
+          <a aria-label="Open the Blinkit Clone live site" href="https://blinkit-clone-c3b3.onrender.com/" target="_blank" class="github"><i
               class="fa-solid fa-eye"></i></a>
-          <a href="https://github.com/AmarJeetSharma6802/Blinkit-clone" target="_blank" class="github"><i
+          <a aria-label="Blinkit Clone source code on GitHub" href="https://github.com/AmarJeetSharma6802/Blinkit-clone" target="_blank" class="github"><i
               class="fa-brands fa-github"></i></a>
         </div>
       </div>
@@ -879,9 +885,9 @@
           management
           for a seamless user experience. Technologies: React, Redux, JavaScript.</p>
         <div class="project-icon" id="icon-project-real">
-          <a href="https://adidas-clone-pink.vercel.app/" target="_blank" class="github"><i
+          <a aria-label="Open the Adidas Clone live site" href="https://adidas-clone-pink.vercel.app/" target="_blank" class="github"><i
               class="fa-solid fa-eye"></i></a>
-          <a href="https://github.com/AmarJeetSharma6802/Adidas_clone" target="_blank" class="github"><i
+          <a aria-label="Adidas Clone source code on GitHub" href="https://github.com/AmarJeetSharma6802/Adidas_clone" target="_blank" class="github"><i
               class="fa-brands fa-github"></i></a>
         </div>
       </div>
@@ -893,9 +899,9 @@
         <p class="projects-para">Developed a full-stack Amazon clone using Next.js App Router, Clerk for auth, dynamic
           API routes, and modular product models with a pixel-perfect UI replicating Amazon’s shopping experience.</p>
         <div class="project-icon" id="icon-project">
-          <a href="https://amazon-tau-two.vercel.app/" target="_blank" class="github"><i
+          <a aria-label="Open the Amazon Clone live site" href="https://amazon-tau-two.vercel.app/" target="_blank" class="github"><i
               class="fa-solid fa-eye"></i></a>
-          <a href="https://github.com/AmarJeetSharma6802/amazona" target="_blank" class="github"><i
+          <a aria-label="Amazon Clone source code on GitHub" href="https://github.com/AmarJeetSharma6802/amazona" target="_blank" class="github"><i
               class="fa-brands fa-github"></i></a>
         </div>
       </div>
@@ -911,9 +917,9 @@
           Node.js and Express,it provides APIs for video uploads, user authentication,video management ,and comment
           systems . </p>
         <div class="project-icon" id="icon-project">
-          <a href="https://github.com/AmarJeetSharma6802/You-tube-backend-Clone" target="_blank" class="github"><i
+          <a aria-label="Open the Youtube Backend live site" href="https://github.com/AmarJeetSharma6802/You-tube-backend-Clone" target="_blank" class="github"><i
               class="fa-solid fa-eye"></i></a>
-          <a href="https://github.com/AmarJeetSharma6802/You-tube-backend-Clone" target="_blank" class="github"><i
+          <a aria-label="Youtube Backend source code on GitHub" href="https://github.com/AmarJeetSharma6802/You-tube-backend-Clone" target="_blank" class="github"><i
               class="fa-brands fa-github"></i></a>
         </div>
       </div>
@@ -927,8 +933,8 @@
           front end and an Express backend. It offers seamless integration for marketing services with a user-friendly
           interface.</p>
         <div class="project-icon" id="icon-project-clikcrave">
-          <a href="https://clik-crave.vercel.app/" target="_blank" class="github"><i class="fa-solid fa-eye"></i></a>
-          <a href="https://github.com/AmarJeetSharma6802" target="_blank" class="github"><i
+          <a aria-label="Open the Clikcrave live site" href="https://clik-crave.vercel.app/" target="_blank" class="github"><i class="fa-solid fa-eye"></i></a>
+          <a aria-label="Clikcrave source code on GitHub" href="https://github.com/AmarJeetSharma6802" target="_blank" class="github"><i
               class="fa-brands fa-github"></i></a>
         </div>
       </div>
@@ -942,9 +948,9 @@
           registration, login, password change, and profile update features. Prioritized security, efficiency, and
           user-friendly integration.</p>
         <div class="project-icon" id="icon-project">
-          <a href="https://smart-hire-fronted.vercel.app/" target="_blank" class="github"><i
+          <a aria-label="Open the User Account Management System live site" href="https://smart-hire-fronted.vercel.app/" target="_blank" class="github"><i
               class="fa-solid fa-eye"></i></a>
-          <a href="https://github.com/AmarJeetSharma6802/SmartHireFronted" target="_blank" class="github"><i
+          <a aria-label="User Account Management System source code on GitHub" href="https://github.com/AmarJeetSharma6802/SmartHireFronted" target="_blank" class="github"><i
               class="fa-brands fa-github"></i></a>
         </div>
       </div>
@@ -958,9 +964,9 @@
           MongoDB, Mongoose, TypeScript. Built dynamic, responsive e-commerce websites with seamless user experience,
           efficient state management, and robust backend solutions.</p>
         <div class="project-icon" id="icon-project">
-          <a href="https://portfolio-beta-dusky-34.vercel.app/" target="_blank" class="github"><i
+          <a aria-label="Open the PortFolio live site" href="https://portfolio-beta-dusky-34.vercel.app/" target="_blank" class="github"><i
               class="fa-solid fa-eye"></i></a>
-          <a href="https://github.com/AmarJeetSharma6802/portfolioData" target="_blank" class="github"><i
+          <a aria-label="PortFolio source code on GitHub" href="https://github.com/AmarJeetSharma6802/portfolioData" target="_blank" class="github"><i
               class="fa-brands fa-github"></i></a>
         </div>
       </div>
@@ -974,9 +980,9 @@
           timing. This project demonstrates skills in front-end design, responsive layouts, and event handling,
           simulating core iPhone functions effectively</p>
         <div class="project-icon" id="icon-project">
-          <a href="https://i-phone-clone-hazel.vercel.app/" target="_blank" class="github"><i
+          <a aria-label="Open the iPhone Clone live site" href="https://i-phone-clone-hazel.vercel.app/" target="_blank" class="github"><i
               class="fa-solid fa-eye"></i></a>
-          <a href="https://github.com/AmarJeetSharma6802/I-phone-clone" target="_blank" class="github"><i
+          <a aria-label="iPhone Clone source code on GitHub" href="https://github.com/AmarJeetSharma6802/I-phone-clone" target="_blank" class="github"><i
               class="fa-brands fa-github"></i></a>
         </div>
       </div>
@@ -989,9 +995,9 @@
           user
           interface of Netflix, featuring a dynamic homepage with movie thumbnails, carousels, and hover animations.</p>
         <div class="project-icon" id="icon-project">
-          <a href="https://netflix-fronted-clone-git-main-amarjeetsharma6802s-projects.vercel.app/" target="_blank"
+          <a aria-label="Open the Netflix Clone live site" href="https://netflix-fronted-clone-git-main-amarjeetsharma6802s-projects.vercel.app/" target="_blank"
             class="github"><i class="fa-solid fa-eye"></i></a>
-          <a href="https://github.com/AmarJeetSharma6802/netflix-fronted-clone" target="_blank" class="github"><i
+          <a aria-label="Netflix Clone source code on GitHub" href="https://github.com/AmarJeetSharma6802/netflix-fronted-clone" target="_blank" class="github"><i
               class="fa-brands fa-github"></i></a>
         </div>
       </div>
@@ -1005,9 +1011,9 @@
           visibility toggle, edit/delete features, and real-time form validations, using Toastify for feedback and
           responsive UI design.</p>
         <div class="project-icon" id="icon-project">
-          <a href="https://password-manager-dusky-two.vercel.app/" target="_blank" class="github"><i
+          <a aria-label="Open the Password manager live site" href="https://password-manager-dusky-two.vercel.app/" target="_blank" class="github"><i
               class="fa-solid fa-eye"></i></a>
-          <a href="https://github.com/AmarJeetSharma6802/password_Manager" target="_blank" class="github"><i
+          <a aria-label="Password manager source code on GitHub" href="https://github.com/AmarJeetSharma6802/password_Manager" target="_blank" class="github"><i
               class="fa-brands fa-github"></i></a>
         </div>
       </div>
@@ -1020,9 +1026,9 @@
         <p class="projects-para">Built a modern performance marketing portfolio showcasing Meta Ads, Google Ads, lead generation, campaign analytics, conversion optimization, client projects, marketing strategies, performance tracking, and measurable business growth.
 </p>
         <div class="project-icon" id="icon-project">
-          <a href="https://anand-sharma.vercel.app/" target="_blank" class="github"><i
+          <a aria-label="Open the Performance Marketing Portfolio live site" href="https://anand-sharma.vercel.app/" target="_blank" class="github"><i
               class="fa-solid fa-eye"></i></a>
-          <a href="https://github.com/AmarJeetSharma6802" target="_blank" class="github"><i
+          <a aria-label="Performance Marketing Portfolio source code on GitHub" href="https://github.com/AmarJeetSharma6802" target="_blank" class="github"><i
               class="fa-brands fa-github"></i></a>
         </div>
       </div>
@@ -1034,9 +1040,9 @@
         <div class="project-title">Digital Growth & Web Solutions</div>
         <p class="projects-para">WebAdsFusion combines high-performance web development with data-driven digital marketing, delivering modern websites, Meta Ads, Google Ads, SEO, and performance strategies that help businesses attract customers, increase conversions, and scale faster.</p>
         <div class="project-icon" id="icon-project">
-          <a href="https://web-ads-fusion.vercel.app/" target="_blank" class="github"><i
+          <a aria-label="Open the Digital Growth & Web Solutions live site" href="https://web-ads-fusion.vercel.app/" target="_blank" class="github"><i
               class="fa-solid fa-eye"></i></a>
-          <a href="https://github.com/AmarJeetSharma6802" target="_blank" class="github"><i
+          <a aria-label="Digital Growth & Web Solutions source code on GitHub" href="https://github.com/AmarJeetSharma6802" target="_blank" class="github"><i
               class="fa-brands fa-github"></i></a>
         </div>
       </div>
@@ -1117,17 +1123,17 @@
         </div>
         <div class="img backend">
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYUASnkyRvUnJRW94LrX7WDDB0aJB3k15O2A&s"
-            alt="Mongoose Logo" class="skills-img">
+            alt="GSAP logo" class="skills-img">
           <p class="skills-para">Gsap</p>
         </div>
         <div class="img backend">
           <img src="https://res.cloudinary.com/futurecoder/image/upload/v1758291655/qgfwx9ffmcggsqyu5ehc.svg"
-            alt="Mongoose Logo" class="skills-img">
+            alt="Docker logo" class="skills-img">
           <p class="skills-para">Docker</p>
         </div>
         <div class="img backend">
           <img src="https://res.cloudinary.com/futurecoder/image/upload/v1758291886/qupmd4r4bskrwzbptyws.png"
-            alt="Mongoose Logo" class="skills-img">
+            alt="Microsoft Clarity logo" class="skills-img">
           <p class="skills-para">MicroSoft Clarity</p>
         </div>
         <div class="img backend">
@@ -1137,29 +1143,29 @@
         </div>
         <div class="img backend">
           <img src="https://res.cloudinary.com/futurecoder/image/upload/v1765690318/f2khfjrlxhkuem0zx5k0.png"
-            class="skills-img">
+            alt="NextAuth logo" class="skills-img">
           <p class="skills-para">Next Auth</p>
         </div>
         <div class="img backend">
           <img src="https://res.cloudinary.com/futurecoder/image/upload/v1766727146/nt8sudq4uikccgy0jlhj.png"
-            class="skills-img">
+            alt="Python logo" class="skills-img">
           <p class="skills-para">Python</p>
         </div>
         <div class="img backend">
           <img src="https://res.cloudinary.com/futurecoder/image/upload/v1773383439/wcioetw7gshswmahaahs.png"
-            class="skills-img">
+            alt="PostgreSQL logo" class="skills-img">
           <p class="skills-para">PostgreSQL</p>
         </div>
 
            <div class="img backend">
           <img src="https://res.cloudinary.com/futurecoder/image/upload/v1787553580/fudtwdagoaor5v3hqzrr.png"
-            class="skills-img">
+            alt="Sentry logo" class="skills-img">
           <p class="skills-para">Sentry</p>
         </div>
 
-          <div class="img backend">
-          <img src="https://res.cloudinary.com/futurecoder/image/upload/v1788003351/lg-6623b70b896ab-Electron-Electronjs-removebg-preview_ra09zp.png"
-            class="skills-img">
+        <div class="img backend">
+          <img src="https://res.cloudinary.com/futurecoder/image/upload/c_crop,g_north,w_1.0,h_0.76/f_auto,q_auto,w_200/v1788003351/lg-6623b70b896ab-Electron-Electronjs-removebg-preview_ra09zp.png"
+            alt="Electron logo" class="skills-img">
           <p class="skills-para">Electron</p>
         </div>
         
@@ -1228,7 +1234,9 @@
       </aside>
 
       <div class="form">
-        <form id="form" novalidate>
+        <!-- onsubmit="return false" is a fallback: without it a failed script would
+             let the browser GET-submit the form and dump the fields into the URL -->
+        <form id="form" method="post" action="#contact" novalidate onsubmit="return false">
           <div class="field-row">
             <div class="field">
               <input type="text" id="nameId" name="name" placeholder=" " autocomplete="name">
@@ -1267,7 +1275,9 @@
     </div>
   </section>
 
-  <div class="footer">
+  </main>
+
+  <footer class="footer">
     <div class="footer-content">
       <p class="footer-para">Designed and build by Amarjeet sharma, 2024 All rights reserved.</p>
       <div class="icon">
@@ -1281,8 +1291,7 @@
       </div>
     </div>
 
-  </div>
-
+  </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
   <script defer src="index.js"></script>
 
