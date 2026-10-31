@@ -1,151 +1,1519 @@
-const menu = document.querySelector(".hamburger-menu");
-const nav = document.querySelector(".nav");
-const header = document.querySelector(".header");
-const darkModeBtn = document.getElementById("dark-mode-btn");
+<!DOCTYPE html>
+<html lang="en-IN" data-theme="dark">
 
-// Mobile menu
-menu.addEventListener("click", () => {
-  menu.classList.toggle("active");
-  nav.classList.toggle("show");
-});
+<head>
+  <meta charset="UTF-8">
+  <script>
+    // Dark is the default. Runs before paint so there is no flash of the wrong theme.
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem("theme"); } catch (e) {}
+      document.documentElement.setAttribute("data-theme", saved === "light" ? "light" : "dark");
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="-FCNcOAU3fhmWMgRE9qQimrQoTfVEqoDyZ2QrIp5NuY" />
+  <!--   <meta name="description" content="Welcome to my portfolio website. Explore my projects, skills, and contact information." />
+  <meta name="keywords" content="Portfolio, Web Developer, Amarjeet sharma, Projects, Skills, Contact" /> -->
+  <meta name="description"
+    content="Amarjeet Sharma — Full Stack Developer in New Delhi, India. I build web apps, CRM and HRMS platforms with Next.js, React, Node.js, MongoDB, Supabase and LLM integrations. Available for hire." />
+  <meta name="keywords"
+    content="Amarjeet Sharma, Full Stack Developer Delhi, Full Stack Developer in New Delhi, Web Developer Delhi, MERN Stack Developer Delhi, Next.js Developer Delhi, React Developer Delhi, Node.js Developer Delhi, Freelance Web Developer Delhi NCR, Software Developer New Delhi, Full Stack Developer India, CRM Developer, HRMS Developer, LLM Integration, AI Developer, Supabase, MongoDB, PostgreSQL, TypeScript, n8n Automation, Portfolio" />
+  <meta name="author" content="Amarjeet Sharma" />
+  <title>Amarjeet Sharma – Full Stack Developer in Delhi | MERN &amp; Next.js</title>
+  <link rel="canonical" href="https://portfolio-beta-dusky-34.vercel.app/" />
+  <link rel="alternate" hreflang="en-IN" href="https://portfolio-beta-dusky-34.vercel.app/" />
+  <link rel="alternate" hreflang="x-default" href="https://portfolio-beta-dusky-34.vercel.app/" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#08080a" />
 
-// Theme: dark by default, click switches to light. Choice is remembered.
-const themeIcon = darkModeBtn.querySelector("i");
+  <!-- Location: city-level only (New Delhi), no personal address -->
+  <meta name="geo.region" content="IN-DL" />
+  <meta name="geo.placename" content="New Delhi" />
+  <meta name="geo.position" content="28.6139;77.2090" />
+  <meta name="ICBM" content="28.6139, 77.2090" />
 
-const paintThemeButton = () => {
-  const isLight = document.documentElement.getAttribute("data-theme") === "light";
-  themeIcon.className = isLight ? "fa-solid fa-moon" : "fa-solid fa-sun";
-  darkModeBtn.setAttribute("aria-label", isLight ? "Switch to dark mode" : "Switch to light mode");
-};
+  <!-- Open Graph -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="Amarjeet Sharma — Full Stack Developer in Delhi" />
+  <meta property="og:title" content="Amarjeet Sharma – Full Stack Developer in Delhi | MERN &amp; Next.js" />
+  <meta property="og:description"
+    content="Full Stack Developer in New Delhi, India building production web apps, CRM and HRMS platforms with Next.js, React, Node.js, MongoDB, Supabase and LLM integrations." />
+  <meta property="og:url" content="https://portfolio-beta-dusky-34.vercel.app/" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="profile:first_name" content="Amarjeet" />
+  <meta property="profile:last_name" content="Sharma" />
+  <meta property="og:image"
+    content="https://res.cloudinary.com/futurecoder/image/upload/e_background_removal/c_crop,g_face,w_660,h_940,z_0.34/c_pad,w_1200,h_630,b_rgb:0b0b0f/f_jpg,q_auto/v1782551807/ChatGPT_Image_Jun_27_2026_02_30_52_PM_cjg2w5.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Amarjeet Sharma, Full Stack Developer in New Delhi" />
 
-paintThemeButton();
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Amarjeet Sharma – Full Stack Developer in Delhi" />
+  <meta name="twitter:description"
+    content="Full Stack Developer in New Delhi, India building web apps, CRM and HRMS platforms with Next.js, React, Node.js, MongoDB, Supabase and LLM integrations." />
+  <meta name="twitter:image"
+    content="https://res.cloudinary.com/futurecoder/image/upload/e_background_removal/c_crop,g_face,w_660,h_940,z_0.34/c_pad,w_1200,h_630,b_rgb:0b0b0f/f_jpg,q_auto/v1782551807/ChatGPT_Image_Jun_27_2026_02_30_52_PM_cjg2w5.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Favicon: the hero portrait, face-cropped on the site's dark background -->
+  <link rel="icon" type="image/png" sizes="32x32"
+    href="https://res.cloudinary.com/futurecoder/image/upload/e_background_removal/c_thumb,g_face,w_64,h_64,z_0.95/b_rgb:0b0b0f/f_png,q_auto/v1782551807/ChatGPT_Image_Jun_27_2026_02_30_52_PM_cjg2w5.png">
+  <link rel="icon" type="image/png" sizes="192x192"
+    href="https://res.cloudinary.com/futurecoder/image/upload/e_background_removal/c_thumb,g_face,w_192,h_192,z_0.95/b_rgb:0b0b0f/f_png,q_auto/v1782551807/ChatGPT_Image_Jun_27_2026_02_30_52_PM_cjg2w5.png">
+  <link rel="apple-touch-icon" sizes="180x180"
+    href="https://res.cloudinary.com/futurecoder/image/upload/e_background_removal/c_thumb,g_face,w_180,h_180,z_0.95/b_rgb:0b0b0f/f_png,q_auto/v1782551807/ChatGPT_Image_Jun_27_2026_02_30_52_PM_cjg2w5.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-darkModeBtn.addEventListener("click", () => {
-  const next = document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
-  document.documentElement.setAttribute("data-theme", next);
-  try {
-    localStorage.setItem("theme", next);
-  } catch (e) {}
-  paintThemeButton();
-});
+  <!--   microSoft clarity -->
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "r3cihi99gq");
+  </script>
 
-// Header gets a solid backdrop once the page scrolls
-window.addEventListener("scroll", () => {
-  header.classList.toggle("scrolled", window.scrollY > 20);
-});
+  <!-- Structured data: one @graph so Google resolves a single, connected entity -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://portfolio-beta-dusky-34.vercel.app/#amarjeet-sharma",
+      "name": "Amarjeet Sharma",
+      "givenName": "Amarjeet",
+      "familyName": "Sharma",
+      "alternateName": [
+        "Amarjeet",
+        "Amarjeet Sharma Full Stack Developer",
+        "Amarjeet Sharma Delhi"
+      ],
+      "jobTitle": [
+        "Full Stack Developer",
+        "MERN Stack Developer",
+        "Next.js Developer"
+      ],
+      "disambiguatingDescription": "Full Stack Developer based in New Delhi, India, specialising in the MERN stack, Next.js, CRM and HRMS platforms and LLM-integrated web systems.",
+      "description": "Amarjeet Sharma is a Full Stack Developer in New Delhi, India with 1.6 years of professional experience building and shipping production web applications. He works across Next.js, React, Node.js, Express, MongoDB, PostgreSQL and Supabase, builds in-house CRM and HRMS platforms, and integrates LLMs and AI APIs. He has taken live commercial websites from first commit to production including domain and DNS setup, technical SEO, analytics, error monitoring and deployment, and builds automation workflows with n8n.",
+      "url": "https://portfolio-beta-dusky-34.vercel.app/",
+      "mainEntityOfPage": {
+        "@id": "https://portfolio-beta-dusky-34.vercel.app/#webpage"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "@id": "https://portfolio-beta-dusky-34.vercel.app/#headshot",
+        "url": "https://res.cloudinary.com/futurecoder/image/upload/e_background_removal/c_crop,g_face,w_660,h_940,z_0.34/b_rgb:f2f2f4,f_jpg,q_auto,w_800/v1782551807/ChatGPT_Image_Jun_27_2026_02_30_52_PM_cjg2w5.png",
+        "width": 800,
+        "height": 1139,
+        "caption": "Amarjeet Sharma, Full Stack Developer in New Delhi"
+      },
+      "email": "mailto:amarsharma6802@gmail.com",
+      "gender": "Male",
+      "nationality": {
+        "@type": "Country",
+        "name": "India"
+      },
+      "address": {
+        "@id": "https://portfolio-beta-dusky-34.vercel.app/#address"
+      },
+      "homeLocation": {
+        "@id": "https://portfolio-beta-dusky-34.vercel.app/#new-delhi"
+      },
+      "workLocation": {
+        "@id": "https://portfolio-beta-dusky-34.vercel.app/#new-delhi"
+      },
+      "worksFor": {
+        "@id": "https://elitevirtualemployee.com/#organization"
+      },
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Delhi",
+          "sameAs": "https://en.wikipedia.org/wiki/University_of_Delhi"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "MadridSoftware Training Institute"
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Certified Full Stack Developer",
+          "credentialCategory": "certificate",
+          "recognizedBy": {
+            "@type": "EducationalOrganization",
+            "name": "MadridSoftware Training Institute"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Diploma in Automotive Engineering",
+          "credentialCategory": "diploma"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Docker Essentials",
+          "credentialCategory": "certificate",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Simplilearn"
+          }
+        }
+      ],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Full Stack Developer",
+        "occupationalCategory": "15-1254.00 Web Developers",
+        "occupationLocation": {
+          "@id": "https://portfolio-beta-dusky-34.vercel.app/#new-delhi"
+        },
+        "experienceRequirements": "1.6 years of professional full stack development",
+        "skills": "Next.js, React, Node.js, Express.js, TypeScript, MongoDB, PostgreSQL, Supabase, REST API design, authentication and role-based access control, CRM and HRMS development, LLM integration, Docker, n8n workflow automation, technical SEO"
+      },
+      "knowsAbout": [
+        "Full Stack Development",
+        "Web Development",
+        "Next.js",
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "TypeScript",
+        "JavaScript",
+        "MongoDB",
+        "PostgreSQL",
+        "Supabase",
+        "Prisma",
+        "REST API Design",
+        "Authentication and Role-Based Access Control",
+        "CRM Development",
+        "HRMS Development",
+        "Large Language Models (LLM)",
+        "LLM Integration",
+        "AI API Integration",
+        "Prompt Engineering",
+        "n8n Workflow Automation",
+        "Electron",
+        "Docker",
+        "Technical SEO",
+        "Web Performance Optimization",
+        "Python",
+        "Deep Learning",
+        "PyTorch",
+        "Computer Vision",
+        "Robot Operating System (ROS)"
+      ],
+      "knowsLanguage": [
+        {
+          "@type": "Language",
+          "name": "English",
+          "alternateName": "en"
+        },
+        {
+          "@type": "Language",
+          "name": "Hindi",
+          "alternateName": "hi"
+        }
+      ],
+      "seeks": {
+        "@type": "Demand",
+        "name": "Full-time, freelance and remote Full Stack Developer opportunities in Delhi NCR and worldwide"
+      },
+      "makesOffer": {
+        "@id": "https://portfolio-beta-dusky-34.vercel.app/#services"
+      },
+      "sameAs": [
+        "https://github.com/AmarJeetSharma6802",
+        "https://www.linkedin.com/in/amarjeet-sharma-full-stack/"
+      ]
+    },
+    {
+      "@type": "PostalAddress",
+      "@id": "https://portfolio-beta-dusky-34.vercel.app/#address",
+      "addressLocality": "New Delhi",
+      "addressRegion": "Delhi",
+      "addressCountry": "IN"
+    },
+    {
+      "@type": "City",
+      "@id": "https://portfolio-beta-dusky-34.vercel.app/#new-delhi",
+      "name": "New Delhi",
+      "address": {
+        "@id": "https://portfolio-beta-dusky-34.vercel.app/#address"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 28.6139,
+        "longitude": 77.209
+      },
+      "sameAs": "https://en.wikipedia.org/wiki/New_Delhi"
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://portfolio-beta-dusky-34.vercel.app/#service",
+      "name": "Amarjeet Sharma — Full Stack Developer in New Delhi",
+      "description": "Freelance and contract full stack web development from New Delhi: Next.js and MERN web applications, CRM and HRMS platforms, LLM and AI integrations, n8n automation and technical SEO for businesses in Delhi NCR, across India and remote worldwide.",
+      "url": "https://portfolio-beta-dusky-34.vercel.app/",
+      "image": {
+        "@id": "https://portfolio-beta-dusky-34.vercel.app/#headshot"
+      },
+      "email": "amarsharma6802@gmail.com",
+      "founder": {
+        "@id": "https://portfolio-beta-dusky-34.vercel.app/#amarjeet-sharma"
+      },
+      "address": {
+        "@id": "https://portfolio-beta-dusky-34.vercel.app/#address"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 28.6139,
+        "longitude": 77.209
+      },
+      "areaServed": [
+        {
+          "@id": "https://portfolio-beta-dusky-34.vercel.app/#new-delhi"
+        },
+        {
+          "@type": "City",
+          "name": "Delhi"
+        },
+        {
+          "@type": "City",
+          "name": "Noida"
+        },
+        {
+          "@type": "City",
+          "name": "Gurugram"
+        },
+        {
+          "@type": "City",
+          "name": "Ghaziabad"
+        },
+        {
+          "@type": "City",
+          "name": "Faridabad"
+        },
+        {
+          "@type": "Country",
+          "name": "India"
+        }
+      ],
+      "knowsLanguage": [
+        "en",
+        "hi"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "@id": "https://portfolio-beta-dusky-34.vercel.app/#services",
+        "name": "Full stack development services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Full Stack Web Application Development",
+              "description": "End-to-end web apps with Next.js, React, Node.js, Express, MongoDB, PostgreSQL and Supabase."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom CRM and HRMS Development",
+              "description": "Lead, deal and activity CRMs and attendance/HRMS platforms with role-based dashboards, audit logs and integrations."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "LLM and AI Integration",
+              "description": "Integrating large language models, AI APIs and voice AI into web products and business workflows."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Business Websites with Technical SEO",
+              "description": "Fast Next.js websites with structured data, analytics, error monitoring, domain, DNS and deployment."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Workflow Automation with n8n",
+              "description": "Automation pipelines that connect APIs, CRMs, WhatsApp and email to remove manual work."
+            }
+          }
+        ]
+      },
+      "sameAs": [
+        "https://github.com/AmarJeetSharma6802",
+        "https://www.linkedin.com/in/amarjeet-sharma-full-stack/"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://elitevirtualemployee.com/#organization",
+      "name": "Elite Virtual Employee",
+      "url": "https://elitevirtualemployee.com/",
+      "description": "Remote staffing and IT services company where Amarjeet Sharma works as a full-time Full Stack Developer."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://portfolio-beta-dusky-34.vercel.app/#website",
+      "url": "https://portfolio-beta-dusky-34.vercel.app/",
+      "name": "Amarjeet Sharma — Full Stack Developer in Delhi",
+      "alternateName": "Amarjeet Sharma Portfolio",
+      "description": "Portfolio of Amarjeet Sharma, a Full Stack Developer in New Delhi working with Next.js, React, Node.js, MongoDB, Supabase, LLM integrations and workflow automation.",
+      "inLanguage": "en-IN",
+      "publisher": {
+        "@id": "https://portfolio-beta-dusky-34.vercel.app/#amarjeet-sharma"
+      },
+      "copyrightHolder": {
+        "@id": "https://portfolio-beta-dusky-34.vercel.app/#amarjeet-sharma"
+      }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://portfolio-beta-dusky-34.vercel.app/#webpage",
+      "url": "https://portfolio-beta-dusky-34.vercel.app/",
+      "name": "Amarjeet Sharma – Full Stack Developer in Delhi | MERN & Next.js",
+      "description": "Portfolio of Amarjeet Sharma, Full Stack Developer in New Delhi, India — production web applications, CRM and HRMS platforms, LLM integrations and automation workflows built with Next.js, React, Node.js, MongoDB and Supabase.",
+      "inLanguage": "en-IN",
+      "isPartOf": {
+        "@id": "https://portfolio-beta-dusky-34.vercel.app/#website"
+      },
+      "about": {
+        "@id": "https://portfolio-beta-dusky-34.vercel.app/#amarjeet-sharma"
+      },
+      "mainEntity": {
+        "@id": "https://portfolio-beta-dusky-34.vercel.app/#amarjeet-sharma"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://portfolio-beta-dusky-34.vercel.app/#headshot"
+      },
+      "hasPart": {
+        "@id": "https://portfolio-beta-dusky-34.vercel.app/#projects"
+      },
+      "dateModified": "2026-10-31"
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://portfolio-beta-dusky-34.vercel.app/#projects",
+      "name": "Selected projects by Amarjeet Sharma",
+      "itemListOrder": "https://schema.org/ItemListOrderDescending",
+      "numberOfItems": 7,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "WebApplication",
+            "name": "Team Sathi",
+            "url": "https://team-sathi.onrender.com/",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web, Windows, macOS",
+            "description": "Multi-tenant workforce HRMS for startups and remote teams, built single-handedly by Amarjeet Sharma — the complete backend plus the design and most of the frontend. Role-based access, attendance and leave tracking, an Electron desktop agent, Razorpay subscription billing and scheduled automation. Currently in testing.",
+            "author": {
+              "@id": "https://portfolio-beta-dusky-34.vercel.app/#amarjeet-sharma"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "WebApplication",
+            "name": "Lead CRM — Elite Virtual Employee",
+            "url": "https://lead-flow-orcin-ten.vercel.app/login",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "description": "In-house Lead CRM built on Next.js for Elite Virtual Employee to replace a costly third-party CRM: leads, deals, activities, tasks, notifications, audit logs and users with admin, salesperson and developer dashboards, CallHippo calling and Excel import/export. In development.",
+            "author": {
+              "@id": "https://portfolio-beta-dusky-34.vercel.app/#amarjeet-sharma"
+            },
+            "publisher": {
+              "@id": "https://elitevirtualemployee.com/#organization"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "WebSite",
+            "name": "Elite Virtual Employee",
+            "url": "https://elitevirtualemployee.com/",
+            "description": "Company website built and maintained in a full-time role: Next.js service pages with dynamic SEO, lead capture APIs and production monitoring.",
+            "author": {
+              "@id": "https://portfolio-beta-dusky-34.vercel.app/#amarjeet-sharma"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "WebSite",
+            "name": "Interiomate",
+            "url": "https://www.interiomate.com/",
+            "description": "Production interior design website shipped end to end with admin-managed gallery, technical SEO, Vapi voice AI enquiries and Sentry, GTM and Clarity monitoring.",
+            "author": {
+              "@id": "https://portfolio-beta-dusky-34.vercel.app/#amarjeet-sharma"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "WebSite",
+            "name": "Pal Engineering",
+            "url": "https://crane-website-woad.vercel.app/",
+            "description": "Crane services website built with Next.js and Clerk authentication, dynamic per-page SEO, enquiry APIs and GSAP animations.",
+            "author": {
+              "@id": "https://portfolio-beta-dusky-34.vercel.app/#amarjeet-sharma"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "WebApplication",
+            "name": "Real Estate Platform",
+            "url": "https://real-estate-eta-snowy.vercel.app/",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "description": "Property listing platform with admin and user roles, NextAuth authentication, listing CRUD and automated email notifications.",
+            "author": {
+              "@id": "https://portfolio-beta-dusky-34.vercel.app/#amarjeet-sharma"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "name": "YouTube Backend — REST API service",
+            "codeRepository": "https://github.com/AmarJeetSharma6802/You-tube-backend-Clone",
+            "programmingLanguage": "JavaScript",
+            "description": "Video platform backend with JWT authentication, refresh tokens, aggregation pipelines and Cloudinary uploads.",
+            "author": {
+              "@id": "https://portfolio-beta-dusky-34.vercel.app/#amarjeet-sharma"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 
-// wave text gsap
-gsap.to(".wave-text span", {
-  opacity: 1,
-  y: 0,
-  stagger: {
-    amount: 2,
-    from: "start",
-    ease: "power1.inOut"
-  },
-  duration: function (index) {
-    return 1 + (index * 0.1);
-  },
-  repeat: -1,
-  yoyo: true
-});
+</head>
 
-// About tabs: Story / Stack / Experience / Proud work
-const tabButtons = document.querySelectorAll(".tab-btn");
-const tabPanels = document.querySelectorAll(".tab-panel");
+<body>
+  <header class="header">
+    <a href="#home" class="logo-label"><span class="logo-mark">AS</span><span class="name">Amarjeet </span><span
+        class="surname">Sharma</span></a>
+    <nav class="nav">
+      <ul class="nav-ul">
+        <li class="nav-li "> <a href="#home" class="nav-a active">Home</a></li>
+        <li class="nav-li"><a href="#about" class="nav-a">About</a></li>
+        <li class="nav-li"><a href="#projects" class="nav-a">Projects</a></li>
+        <li class="nav-li"><a href="#skills" class="nav-a">Skills</a></li>
+        <li class="nav-li"><a href="#contact" class="nav-a">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="toggle-dark-btn">
+      <div class="toggle-btn">
+        <!-- Theme toggle: dark by default, click switches to light -->
+        <button class="dark-mode-btn" id="dark-mode-btn" type="button" aria-label="Switch theme">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+        <a href="#contact" class="nav-cta">Hire Me <i class="fa-solid fa-arrow-right"></i></a>
+        <ul class="hamburger-menu" id="hamburger-menu">
+          <li class="hamburger"></li>
+          <li class="hamburger"></li>
+          <li class="hamburger"></li>
+        </ul>
+      </div>
+    </div>
+  </header>
 
-tabButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    const target = btn.dataset.tab;
-    tabButtons.forEach(b => b.classList.toggle("active", b === btn));
-    tabPanels.forEach(p => p.classList.toggle("active", p.dataset.panel === target));
-  });
-});
+  <main id="main">
+  <div class="head-top" id="home">
 
-// Nav underline: click plus scroll-spy
-document.addEventListener("DOMContentLoaded", () => {
-  const navLinks = document.querySelectorAll(".nav-a");
+    <div class="introduction">
+      <div class="inner-part">
+        <div class="left-width">
+          <div class="my-details">
+            <p class="my-first-para">Hello, my name is </p>
+            <h1 class="mydetails-h1">Amarjeet <span>Sharma</span></h1>
+            <div class="wave-text">
+              <span id="name-1">I'm a</span> <span id="name">F</span><span id="name">u</span><span
+                id="name">l</span><span id="name">l</span> <span id="name">S</span><span id="name">t</span><span
+                id="name">a</span><span id="name">c</span><span id="name">k</span> <span id="name">D</span><span
+                id="name">e</span><span id="name">v</span><span id="name">e</span><span id="name">l</span><span
+                id="name">o</span><span id="name">p</span><span id="name">e</span><span id="name">r.</span>
+            </div>
+            <p class="hero-sub">I build fast, scalable and production-ready web applications with the MERN stack,
+              Next.js, AI integrations and n8n automation — from the first commit to live traffic.</p>
 
-  navLinks.forEach(link => {
-    link.addEventListener("click", function () {
-      navLinks.forEach(item => item.classList.remove("active"));
-      this.classList.add("active");
-      nav.classList.remove("show");
-      menu.classList.remove("active");
-    });
-  });
+            <div class="hero-actions">
+              <a href="#projects" class="primary-btn"><i class="fa-solid fa-layer-group"></i> View My Work</a>
+              <a href="#contact" class="ghost-btn">Let's Connect <i class="fa-solid fa-paper-plane"></i></a>
+            </div>
 
-  const sections = [...document.querySelectorAll("section[id], div[id='home'], div[id='projects'], div[id='skills'], div[id='contact']")];
+            <div class="hero-socials">
+              <a href="https://github.com/AmarJeetSharma6802" target="_blank" aria-label="GitHub"><i
+                  class="fa-brands fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/amarjeet-sharma-full-stack/" target="_blank" aria-label="LinkedIn"><i
+                  class="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=amarsharma6802@gmail.com&amp;su=Project%20enquiry"
+                target="_blank" rel="noopener" class="email-link" data-email="amarsharma6802@gmail.com"
+                aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+              <span class="hero-location"><i class="fa-solid fa-location-dot"></i> New Delhi, India</span>
+            </div>
+          </div>
+        </div>
+        <div class="right-width">
+          <div class="image-background-circle">
+            <span class="orbit-ring"></span>
+            <span class="orbit-ring orbit-ring-2"></span>
 
-  const spy = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      navLinks.forEach(link => {
-        link.classList.toggle("active", link.getAttribute("href") === "#" + entry.target.id);
-      });
-    });
-  }, { rootMargin: "-45% 0px -50% 0px" });
+            <!-- Skill icons orbiting around the photo -->
+            <div class="orbit-icons">
+              <span class="orbit-icon" style="--a:0deg">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React">
+              </span>
+              <span class="orbit-icon" style="--a:60deg">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" alt="Node.js">
+              </span>
+              <span class="orbit-icon" style="--a:120deg">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
+                  alt="Next.js" class="invert-on-dark">
+              </span>
+              <span class="orbit-icon" style="--a:180deg">
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg"
+                  alt="MongoDB">
+              </span>
+              <span class="orbit-icon" style="--a:240deg">
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg"
+                  alt="TypeScript">
+              </span>
+              <span class="orbit-icon" style="--a:300deg">
+                <img src="https://res.cloudinary.com/futurecoder/image/upload/v1758291655/qgfwx9ffmcggsqyu5ehc.svg"
+                  alt="Docker">
+              </span>
+            </div>
 
-  sections.forEach(section => spy.observe(section));
+            <div class="orbit-icons orbit-icons-inner">
+              <span class="orbit-icon small" style="--a:35deg">
+                <img src="https://mohit-portfolio.vercel.app/assets/javascript.0656ff65.svg" alt="JavaScript">
+              </span>
+              <span class="orbit-icon small" style="--a:155deg">
+                <img src="https://res.cloudinary.com/futurecoder/image/upload/v1766727146/nt8sudq4uikccgy0jlhj.png"
+                  alt="Python">
+              </span>
+              <span class="orbit-icon small" style="--a:275deg">
+                <img src="https://mohit-portfolio.vercel.app/assets/express.27ec7e3d.svg" alt="Express"
+                  class="invert-on-dark">
+              </span>
+            </div>
 
-  // Reveal cards as they scroll into view
-  const revealTargets = document.querySelectorAll(".grid-box, .why-card, .stat-card, .img, .cta-item");
-  revealTargets.forEach(el => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(18px)";
-    el.style.transition = "opacity .6s ease, transform .6s ease";
-  });
+            <img
+              src="https://res.cloudinary.com/futurecoder/image/upload/e_background_removal/c_crop,g_face,w_660,h_940,z_0.34/f_auto,q_auto,w_760/v1782551807/ChatGPT_Image_Jun_27_2026_02_30_52_PM_cjg2w5.png"
+              alt="Amarjeet Sharma, Full Stack Developer" id="config">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  const reveal = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.style.opacity = "1";
-      entry.target.style.transform = "none";
-      reveal.unobserve(entry.target);
-    });
-  }, { threshold: 0.12 });
+  <section class="about" id="about">
+    <div class="section-head">
+      <span class="eyebrow">Get to know me</span>
+      <h2 class="me-h1">About <span>Me</span></h2>
+      <p class="section-sub">Full Stack Developer building production web apps — MERN, Next.js, AI integrations and
+        automation. Based in New Delhi, open to full-time, freelance and remote work.</p>
+    </div>
 
-  revealTargets.forEach(el => reveal.observe(el));
-});
+    <div class="about-shell">
+      <div class="about-me">
+        <div class="about-img">
+          <div class="about-photo-card">
+            <img
+              src="https://res.cloudinary.com/futurecoder/image/upload/e_background_removal/c_crop,g_face,w_660,h_940,z_0.34/f_auto,q_auto,w_560/v1782551807/ChatGPT_Image_Jun_27_2026_02_30_52_PM_cjg2w5.png"
+              alt="Amarjeet Sharma">
+            <div class="photo-badge">
+              <span class="photo-badge-icon"><i class="fa-solid fa-rocket"></i></span>
+              <div>
+                <strong>Turning ideas into</strong>
+                <span>Scalable digital products</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-quick">
+            <p><i class="fa-solid fa-location-dot"></i> New Delhi, India</p>
+            <p><i class="fa-solid fa-briefcase"></i> Full Stack Developer @ Elite Virtual Employee</p>
+            <p><i class="fa-solid fa-envelope"></i> amarsharma6802@gmail.com</p>
+          </div>
+        </div>
 
-const clearForm = () => {
-  document.getElementById("nameId").value = '';
-  document.getElementById("email").value = '';
-  document.getElementById("phone").value = '';
-  document.getElementById("message").value = '';
-};
+        <div class="about-me-para">
+          <div class="btn-about">
+            <button class="tab-btn me-btn active" data-tab="story">My Story</button>
+            <button class="tab-btn why" data-tab="stack">What I Work With</button>
+            <button class="tab-btn" data-tab="work">Experience</button>
+            <button class="tab-btn" data-tab="proud">Proud Work</button>
+          </div>
 
-const fetchData = async (name, email, phone, message) => {
-  try {
-    const response = await axios.post("https://portfolio-data-five.vercel.app/portfolio/register", {
-      name,
-      email,
-      phone,
-      message
-    }, {
-      withCredentials: true
-    });
+          <div class="inner-para">
+            <div class="about-para tab-panel active" data-panel="story">
+              <p class="inner-para-1">Hi, I'm <strong>Amarjeet</strong> — a Full Stack Developer with
+                <strong>1.6 years of hands-on experience</strong> building real, production-ready web applications.
+                I started coding out of curiosity, wanting to understand how websites actually work behind the scenes.
+                That curiosity turned into projects, client work and complete platforms where I handle everything from
+                the frontend UI to the backend systems.
+              </p>
+              <p class="inner-para-2">I mainly work with the <span class="span-inner-para-2">MERN stack and Next.js (App
+                  Router)</span>, focusing on applications that are fast, scalable and genuinely nice to use. I've taken
+                a live commercial website from the first commit to production — domain and DNS setup, technical SEO,
+                analytics, error monitoring and deployment included.</p>
+              <p class="inner-para-2">Alongside development I build <span class="span-inner-para-2">automation workflows
+                  with n8n</span> — pipelines that connect APIs, trigger actions and remove manual work. Right now I'm
+                going deeper into Deep Learning, PyTorch and ROS, moving toward systems where software interacts with
+                the real world.</p>
+              <p class="inner-para-2">Whether it's optimizing a slow API, designing an automated workflow or polishing
+                an animation, I try to build things cleanly and thoughtfully.</p>
+            </div>
 
-    alert(response.data.message);
-    clearForm();
-  } catch (error) {
-    console.log("Error:", error);
-    alert(error.response ? error.response.data.message : "An error occurred!");
-  }
-};
+            <div class="about-ul tab-panel" data-panel="stack">
+              <ul class="stack-list">
+                <li class="about-li">
+                  <strong>Frontend</strong>
+                  <p>React.js, Next.js (App Router), TypeScript, Redux Toolkit, Tailwind CSS, GSAP, responsive UI</p>
+                </li>
+                <li class="about-li">
+                  <strong>Backend</strong>
+                  <p>Node.js, Express.js, REST API design, Prisma, Python (Django basics), JWT, cron jobs</p>
+                </li>
+                <li class="about-li">
+                  <strong>Database</strong>
+                  <p>MongoDB, Mongoose, PostgreSQL, Supabase, Neon, Firebase</p>
+                </li>
+                <li class="about-li">
+                  <strong>DevOps &amp; Deploy</strong>
+                  <p>Docker, Vercel, Render, Coolify (self-hosted), DNS &amp; SSL setup, Git, GitHub</p>
+                </li>
+                <li class="about-li">
+                  <strong>Auth &amp; Monitoring</strong>
+                  <p>NextAuth, Clerk, JWT, role-based access control, Sentry, Microsoft Clarity, GTM, UTM tracking</p>
+                </li>
+                <li class="about-li">
+                  <strong>AI &amp; Automation</strong>
+                  <p>LLM integration, AI APIs, prompt engineering, Vapi voice AI, Twilio, n8n workflows, Cloudinary, Razorpay,
+                    Electron</p>
+                </li>
+                <li class="about-li">
+                  <strong>Currently learning</strong>
+                  <p>Deep Learning, PyTorch, Computer Vision, ROS and advanced n8n automation systems</p>
+                </li>
+              </ul>
+            </div>
 
-const handleSubmit = (e) => {
-  e.preventDefault();
+            <div class="tab-panel" data-panel="work">
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-top">
+                    <h4>Full Stack Developer</h4><span class="timeline-date">Jan 2026 – Present</span>
+                  </div>
+                  <p class="timeline-org">Elite Virtual Employee (EVE) · Full-time</p>
+                  <ul>
+                    <li>Build and maintain full-stack features across Next.js interfaces, Node.js/Express REST APIs and
+                      MongoDB data models.</li>
+                    <li>Built <strong>Team Sathi</strong> single-handedly — a multi-tenant attendance and
+                      productivity platform with an Electron desktop agent for Windows and macOS. I own the whole
+                      backend (data modelling, REST APIs, auth, billing, cron jobs) and did the design and most of
+                      the frontend myself.</li>
+                    <li>Building an in-house <strong>Lead CRM</strong> on Next.js to replace a costly third-party CRM —
+                      leads, deals, activities, tasks, notifications and audit logs, with admin, salesperson and
+                      developer dashboards, CallHippo integration and Excel import/export.</li>
+                    <li>Implement authentication, role-based access control, Razorpay billing and Twilio/Nodemailer
+                      alerts.</li>
+                    <li>Ship releases end to end: implementation, code review, deployment and post-release monitoring.
+                    </li>
+                  </ul>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-top">
+                    <h4>Freelance Full Stack Developer</h4><span class="timeline-date">2025 – 2026</span>
+                  </div>
+                  <p class="timeline-org">Self-employed · Remote</p>
+                  <ul>
+                    <li>Delivered client websites and web apps on schedule, from requirement gathering to launch.</li>
+                    <li>Built products end to end: UI, REST APIs, database modeling and admin tooling.</li>
+                    <li>Deployed and maintained apps on Vercel, Render and self-hosted Coolify with custom domains and
+                      SSL.</li>
+                    <li>Handed over projects with documentation so clients could manage content without a developer.
+                    </li>
+                  </ul>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-top">
+                    <h4>Certified Full Stack Developer</h4><span class="timeline-date">2024</span>
+                  </div>
+                  <p class="timeline-org">MadridSoftware Training Institute · B.A., Delhi University</p>
+                  <ul>
+                    <li>Diploma in Automotive Engineering — four-year programme.</li>
+                    <li>Docker Essentials (Simplilearn) and Django Development (Udemy) certifications.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
 
-  const name = document.getElementById("nameId").value;
-  const email = document.getElementById("email").value;
-  const phone = document.getElementById("phone").value;
-  const message = document.getElementById("message").value;
+            <div class="tab-panel" data-panel="proud">
+              <ul class="stack-list">
+                <li class="about-li">
+                  <strong>Team Sathi — Workforce HRMS (solo build)</strong>
+                  <p>My biggest project so far, built on my own: the entire backend — data models, REST APIs, auth,
+                    billing and cron automation — plus the design and most of the frontend. Three-tier role system,
+                    JWT auth, plan-based seat limits and activity tracking through an Electron agent. Currently in
+                    testing at <a href="https://team-sathi.onrender.com/" target="_blank">team-sathi.onrender.com</a>.
+                  </p>
+                </li>
+                <li class="about-li">
+                  <strong>Lead CRM — Elite Virtual Employee (in development)</strong>
+                  <p>An in-house CRM on Next.js that replaces a costly third-party tool: leads, deals, activities,
+                    tasks, notifications, audit logs and users, with separate admin, salesperson and developer
+                    dashboards. The dashboard and lead module are ready; CallHippo calling and Excel import/export
+                    are next. Live at <a href="https://lead-flow-orcin-ten.vercel.app/login"
+                      target="_blank">lead-flow-orcin-ten.vercel.app</a>.</p>
+                </li>
+                <li class="about-li">
+                  <strong>Elite Virtual Employee — Company website</strong>
+                  <p>Build and maintain <a href="https://elitevirtualemployee.com/" target="_blank">
+                      elitevirtualemployee.com</a> in my full-time role — service pages with dynamic SEO, lead capture
+                    APIs and production monitoring.</p>
+                </li>
+                <li class="about-li">
+                  <strong>Interiomate — Production website</strong>
+                  <p>Shipped end to end with DNS, technical SEO, Vapi voice AI for inbound enquiries, and a full
+                    observability stack (Sentry, GTM, Clarity).</p>
+                </li>
+                <li class="about-li">
+                  <strong>Real Estate Platform</strong>
+                  <p>Admin/user roles, protected routes, listing CRUD with image uploads, automated email notifications
+                    and GSAP-driven UI.</p>
+                </li>
+                <li class="about-li">
+                  <strong>Pal Engineering — Client website</strong>
+                  <p>Crane services site with Clerk authentication, dynamic per-page SEO, enquiry APIs and a mobile-first
+                    animated layout.</p>
+                </li>
+                <li class="about-li">
+                  <strong>Automation &amp; AI workflows</strong>
+                  <p>n8n pipelines, a WhatsApp agent and a Vapi + Twilio calling agent that capture leads and remove
+                    manual steps.</p>
+                </li>
+              </ul>
+            </div>
+          </div>
 
-  if (!name || !email || !phone || !message) {
-    alert("Please fill in all fields.");
-    return;
-  }
+          <div class="about-stats">
+            <div class="stat-card">
+              <span class="stat-icon"><i class="fa-solid fa-calendar-check"></i></span>
+              <strong>1.6</strong>
+              <p>Years Experience</p>
+            </div>
+            <div class="stat-card">
+              <span class="stat-icon"><i class="fa-solid fa-code"></i></span>
+              <strong>15+</strong>
+              <p>Projects Built</p>
+            </div>
+            <div class="stat-card">
+              <span class="stat-icon"><i class="fa-solid fa-globe"></i></span>
+              <strong>5+</strong>
+              <p>Sites in Production</p>
+            </div>
+            <div class="stat-card">
+              <span class="stat-icon"><i class="fa-brands fa-github"></i></span>
+              <strong>50+</strong>
+              <p>GitHub Repositories</p>
+            </div>
+          </div>
 
-  fetchData(name, email, phone, message);
-};
+        </div>
+      </div>
+
+      <div class="why-hire">
+        <h3>Why <span>Hire Me</span></h3>
+        <div class="why-grid">
+          <div class="why-card">
+            <span class="why-icon c1"><i class="fa-solid fa-rocket"></i></span>
+            <h4>End-to-End Ownership</h4>
+            <p>I take a product from an empty repo to live traffic — UI, API, database, deployment and monitoring.</p>
+          </div>
+          <div class="why-card">
+            <span class="why-icon c2"><i class="fa-solid fa-gauge-high"></i></span>
+            <h4>Production Mindset</h4>
+            <p>Technical SEO, Core Web Vitals, caching, image optimization and error tracking with Sentry.</p>
+          </div>
+          <div class="why-card">
+            <span class="why-icon c3"><i class="fa-solid fa-robot"></i></span>
+            <h4>AI &amp; Automation</h4>
+            <p>AI API integration, prompt-based systems and n8n workflows that cut out repetitive manual work.</p>
+          </div>
+          <div class="why-card">
+            <span class="why-icon c4"><i class="fa-solid fa-cubes"></i></span>
+            <h4>Clean, Scalable Code</h4>
+            <p>Modular components, typed API helpers and predictable contracts that stay maintainable.</p>
+          </div>
+          <div class="why-card">
+            <span class="why-icon c5"><i class="fa-solid fa-bolt"></i></span>
+            <h4>Fast Learner</h4>
+            <p>Picked up Vapi, Razorpay, Electron and Sentry directly on live production work.</p>
+          </div>
+          <div class="why-card">
+            <span class="why-icon c6"><i class="fa-solid fa-users"></i></span>
+            <h4>Remote Ready</h4>
+            <p>Clear written communication, documented decisions and independent delivery in distributed teams.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-cta">
+        <a class="cta-item" href="#projects">
+          <span class="cta-icon"><i class="fa-solid fa-layer-group"></i></span>
+          <span><strong>See My Work</strong><small>Live sites and full-stack projects</small></span>
+        </a>
+        <a class="cta-item email-link"
+          href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=amarsharma6802@gmail.com&amp;su=Project%20enquiry"
+          target="_blank" rel="noopener" data-email="amarsharma6802@gmail.com">
+          <span class="cta-icon"><i class="fa-regular fa-envelope"></i></span>
+          <span><strong>Email Me</strong><small>amarsharma6802@gmail.com</small></span>
+        </a>
+        <a class="cta-item" href="https://www.linkedin.com/in/amarjeet-sharma-full-stack/" target="_blank">
+          <span class="cta-icon"><i class="fa-brands fa-linkedin-in"></i></span>
+          <span><strong>Let's Connect</strong><small>linkedin.com/in/amarjeet-sharma-full-stack</small></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="projects" id="projects">
+    <h1 class="my-Project">My Proj<span>ects</span></h1>
+    <div class="grid-project">
+
+      <div class="grid-box">
+        <a href="https://team-sathi.onrender.com/" target="_blank"> <img
+            src="https://res.cloudinary.com/futurecoder/image/upload/v1788002199/Screenshot_2026-08-29_164403_gjaexi.png"
+            alt="Team Sathi dashboard" class="projects-img"></a>
+        <div class="project-title">Team Sathi — Workforce HRMS <span class="project-badge">Solo build</span><span class="project-badge badge-muted">In testing</span></div>
+        <p class="projects-para"><strong>Built single-handedly</strong> — the complete backend end to end, plus the
+          design and most of the frontend. A multi-tenant workforce HRMS for startups and remote teams, now in testing
+          with every core module built: super admin, company admin and employee roles with JWT auth and seat limits,
+          attendance with breaks and leaves, an Electron desktop agent for activity tracking, Razorpay subscription
+          billing and cron-driven automation. Next.js, TypeScript, Node.js, MongoDB, Electron, Cloudinary.</p>
+        <div class="project-icon" id="icon-project">
+          <a aria-label="Open the Team Sathi — Workforce HRMS live site" href="https://team-sathi.onrender.com/" target="_blank" class="github"><i class="fa-solid fa-eye"></i></a>
+          <a aria-label="Team Sathi — Workforce HRMS — private repo, opens the live site" href="https://team-sathi.onrender.com/" target="_blank" class="github"
+            title="Private repo — opens the live site"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="grid-box">
+        <a href="https://lead-flow-orcin-ten.vercel.app/login" target="_blank"> <img
+            src="https://res.cloudinary.com/futurecoder/image/upload/v1793451335/Screenshot_2026-10-31_181812_hh7nxu.png"
+            alt="Lead CRM dashboard" class="projects-img"></a>
+        <div class="project-title">Lead CRM — Elite Virtual Employee <span class="project-badge">In-house build</span><span class="project-badge badge-muted">In development</span></div>
+        <p class="projects-para">An in-house Lead CRM I'm building for Elite Virtual Employee to replace a costly
+          third-party CRM. Built on Next.js with data models for leads, deals, activities, tasks, notifications,
+          audit logs and users, and three professional dashboards — admin, salesperson and developer (for
+          maintenance). The dashboard and the lead module with tasks and activity are ready; CallHippo calling
+          integration, Excel import/export and more lead fields are in progress.</p>
+        <div class="project-icon" id="icon-project">
+          <a aria-label="Open the Lead CRM live site" href="https://lead-flow-orcin-ten.vercel.app/login" target="_blank" class="github"><i class="fa-solid fa-eye"></i></a>
+          <a aria-label="Lead CRM — private repo, opens the live site" href="https://lead-flow-orcin-ten.vercel.app/login" target="_blank" class="github"
+            title="Private repo — opens the live site"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="grid-box">
+        <a href="https://elitevirtualemployee.com/" target="_blank"> <img
+            src="https://res.cloudinary.com/futurecoder/image/upload/v1786099918/mcv3da9ohczopezw0ek7.png"
+            alt="Elite Virtual Employee" class="projects-img"></a>
+        <div class="project-title">Elite Virtual Employee</div>
+        <p class="projects-para">Company website I build and maintain as a full-time Full Stack Developer at EVE. Built
+          with Next.js and Node.js — service pages with dynamic SEO metadata, lead capture APIs with server-side
+          validation and email routing, plus analytics and error monitoring wired up in production.</p>
+        <div class="project-icon" id="icon-project">
+          <a aria-label="Open the Elite Virtual Employee live site" href="https://elitevirtualemployee.com/" target="_blank" class="github"><i class="fa-solid fa-eye"></i></a>
+          <a aria-label="Elite Virtual Employee — private repo, opens the live site" href="https://elitevirtualemployee.com/" target="_blank" class="github"
+            title="Private repo — opens the live site"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="grid-box">
+        <a href="https://www.interiomate.com/" target="_blank"> <img
+            src="https://res.cloudinary.com/futurecoder/image/upload/v1786100343/baddmjwuu9mlabk0itzc.png"
+            alt="Interiomate" class="projects-img"></a>
+        <div class="project-title">Interiomate — Interior Design</div>
+        <p class="projects-para">A production interior design website shipped end to end: dynamic admin-managed gallery,
+          technical SEO with structured data, Vapi voice AI for inbound enquiries, and full observability with Sentry,
+          Google Tag Manager and Microsoft Clarity.</p>
+        <div class="project-icon" id="icon-project">
+          <a aria-label="Open the Interiomate — Interior Design live site" href="https://www.interiomate.com/" target="_blank" class="github"><i class="fa-solid fa-eye"></i></a>
+          <a aria-label="Interiomate — Interior Design — private repo, opens the live site" href="https://www.interiomate.com/" target="_blank" class="github" title="Private repo — opens the live site"><i
+              class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="grid-box">
+        <a href="https://crane-website-woad.vercel.app/" target="_blank"> <img
+            src="https://res.cloudinary.com/futurecoder/image/upload/v1758814634/uof85hs7pzp6egzflq00.png"
+            alt="interiomate" class="projects-img"></a>
+        <div class="project-title">Pal Engineering</div>
+        <p class="projects-para">Crafted a dynamic, high-performance crane services website using Next.js, Clerk, and
+          GSAP. Integrated backend APIs, interactive animations, and dynamic SEO with script tags for maximum visibility
+          and engagement.</p>
+        <div class="project-icon" id="icon-project">
+          <a aria-label="Open the Pal Engineering live site" href="https://crane-website-woad.vercel.app/" target="_blank" class="github"><i
+              class="fa-solid fa-eye"></i></a>
+          <a aria-label="Pal Engineering — private repo, opens the live site" href="https://crane-website-woad.vercel.app/" title="Private repo — opens the live site" target="_blank" class="github"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="grid-box">
+        <a href="https://real-estate-eta-snowy.vercel.app/" target="_blank"><img
+            src="https://res.cloudinary.com/futurecoder/image/upload/v1767452654/yjslak8rmaw2msyx8csz.png"
+            alt="Real Character" width="100%" class="projects-img"></a>
+        <div class="project-title">Real-Estate Platform</div>
+        <p class="projects-para">Built a production-ready real estate platform using Next.js App Router with admin item
+          management, NextAuth authentication, Swiper UI, email subscriptions via Nodemailer, and automated confirmation
+          and update emails for new or modified listings.</p>
+        <div class="project-icon" id="icon-project-real">
+          <a aria-label="Open the Real-Estate Platform live site" href="https://real-estate-eta-snowy.vercel.app/" target="_blank" class="github"><i
+              class="fa-solid fa-eye"></i></a>
+          <a aria-label="Real-Estate Platform — private repo, opens the live site" href="https://real-estate-eta-snowy.vercel.app/" title="Private repo — opens the live site" target="_blank" class="github"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="grid-box">
+        <a href="https://rido-booking.vercel.app/" target="_blank"><img
+            src="https://res.cloudinary.com/futurecoder/image/upload/v1775979146/mxiyl8k0nckb11dwe6wc.png"
+            alt="Real Character" width="100%" class="projects-img"></a>
+        <div class="project-title">Rido Booking</div>
+        <p class="projects-para">Designed an Uber-like ride booking app with Next.js, Leaflet, and Prisma/PostgreSQL.
+          Features role-based flows, real-time ride management, and upcoming AI voice booking to enhance accessibility
+          and user experience.</p>
+        <div class="project-icon" id="icon-project-real">
+          <a aria-label="Open the Rido Booking live site" href="https://rido-booking.vercel.app/" target="_blank" class="github"><i class="fa-solid fa-eye"></i></a>
+          <a aria-label="Rido Booking — private repo, opens the live site" href="https://rido-booking.vercel.app/" title="Private repo — opens the live site" target="_blank" class="github"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="grid-box">
+        <a href="https://wedding-photo-graphy.vercel.app/" target="_blank"> <img
+            src="https://res.cloudinary.com/futurecoder/image/upload/v1763531865/vl5pxddp02hxqog0vyjd.png"
+            alt="interiomate" class="projects-img"></a>
+        <div class="project-title">Wedding Photography Website</div>
+        <p class="projects-para">A fully functional wedding photography website built with Next.js, API routes, and
+          MongoDB Atlas. Features dynamic galleries, secure form handling, and complete backend integration. Designed
+          for performance, SEO-friendly structure, and customizable for clients.</p>
+        <div class="project-icon" id="icon-project">
+          <a aria-label="Open the Wedding Photography Website live site" href="https://wedding-photo-graphy.vercel.app/" target="_blank" class="github"><i
+              class="fa-solid fa-eye"></i></a>
+          <a aria-label="Wedding Photography Website — private repo, opens the live site" href="https://wedding-photo-graphy.vercel.app/" title="Private repo — opens the live site" target="_blank" class="github"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="grid-box">
+        <a href="https://nike-clone-orpin.vercel.app/" target="_blank"> <img
+            src="https://res.cloudinary.com/futurecoder/image/upload/v1736487388/uploads/zgo0kcmbbgfvtztt29rm.png"
+            alt="Nike Clone e-commerce project" width="100%" class="projects-img"></a>
+        <div class="project-title">Nike Clone</div>
+        <p class="projects-para">Developed a sleek Nike e-commerce clone with React and Redux Toolkit. Designed features
+          like product display, shopping cart, and checkout, ensuring a seamless, responsive experience and optimized
+          state management. Technologies: React, Redux, JavaScript.</p>
+        <div class="project-icon" id="icon-project">
+          <a aria-label="Open the Nike Clone live site" href="https://nike-clone-orpin.vercel.app/" target="_blank" class="github"><i
+              class="fa-solid fa-eye"></i></a>
+          <a aria-label="Nike Clone source code on GitHub" href="https://github.com/AmarJeetSharma6802/nike-clone" target="_blank" class="github"><i
+              class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="grid-box">
+        <a href="https://blinkit-clone-c3b3.onrender.com/" target="_blank"><img
+            src="https://res.cloudinary.com/futurecoder/image/upload/v1739025489/uploads/xkevquhw752viwtqcj1t.png"
+            alt="Blinkit Clone" class="projects-img"></a>
+        <div class="project-title">Blinkit Clone</div>
+        <p class="projects-para">Developed a Blinkit clone using React and Redux Toolkit, featuring categories like
+          pharmacy, baby essentials, pet food, and home products. Integrated fast load times, smooth UI, and SEO
+          optimization for better search ranking and enhanced user experience.</p>
+        <div class="project-icon" id="icon-project">
+          <a aria-label="Open the Blinkit Clone live site" href="https://blinkit-clone-c3b3.onrender.com/" target="_blank" class="github"><i
+              class="fa-solid fa-eye"></i></a>
+          <a aria-label="Blinkit Clone source code on GitHub" href="https://github.com/AmarJeetSharma6802/Blinkit-clone" target="_blank" class="github"><i
+              class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="grid-box">
+        <a href="https://adidas-clone-pink.vercel.app/" target="_blank"><img
+            src="https://res.cloudinary.com/futurecoder/image/upload/v1736488495/uploads/e6xmyvwik6qzcnxxkns1.png"
+            alt="Real Character" width="100%" class="projects-img"></a>
+        <div class="project-title">Adidas Clone</div>
+        <p class="projects-para">Developed an Adidas e-commerce clone using React and Redux Toolkit. Implemented
+          features like user
+          authentication, product display, shopping cart, and checkout. Focused on responsive design and state
+          management
+          for a seamless user experience. Technologies: React, Redux, JavaScript.</p>
+        <div class="project-icon" id="icon-project-real">
+          <a aria-label="Open the Adidas Clone live site" href="https://adidas-clone-pink.vercel.app/" target="_blank" class="github"><i
+              class="fa-solid fa-eye"></i></a>
+          <a aria-label="Adidas Clone source code on GitHub" href="https://github.com/AmarJeetSharma6802/Adidas_clone" target="_blank" class="github"><i
+              class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+      <div class="grid-box">
+        <a href="https://amazon-tau-two.vercel.app/" target="_blank"><img
+            src="https://res.cloudinary.com/futurecoder/image/upload/v1749791398/t8dxx7kioz38dvp2voha.png"
+            alt="amazon.in" class="projects-img"></a>
+        <div class="project-title">Amazon Clone</div>
+        <p class="projects-para">Developed a full-stack Amazon clone using Next.js App Router, Clerk for auth, dynamic
+          API routes, and modular product models with a pixel-perfect UI replicating Amazon’s shopping experience.</p>
+        <div class="project-icon" id="icon-project">
+          <a aria-label="Open the Amazon Clone live site" href="https://amazon-tau-two.vercel.app/" target="_blank" class="github"><i
+              class="fa-solid fa-eye"></i></a>
+          <a aria-label="Amazon Clone source code on GitHub" href="https://github.com/AmarJeetSharma6802/amazona" target="_blank" class="github"><i
+              class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+
+
+      <div class="grid-box">
+        <a href="https://github.com/AmarJeetSharma6802/You-tube-backend-Clone" target="_blank"> <img
+            src="https://res.cloudinary.com/futurecoder/image/upload/v1731934210/uploads/no7na9cvmwvi5tz4ubfp.png"
+            alt="Real Character" width="100%" class="projects-img"></a>
+        <div class="project-title">Youtube Backend</div>
+        <p class="projects-para"> This project is a backend system designed to mimic YouTube's functionality.Built using
+          Node.js and Express,it provides APIs for video uploads, user authentication,video management ,and comment
+          systems . </p>
+        <div class="project-icon" id="icon-project">
+          <a aria-label="Open the Youtube Backend live site" href="https://github.com/AmarJeetSharma6802/You-tube-backend-Clone" target="_blank" class="github"><i
+              class="fa-solid fa-eye"></i></a>
+          <a aria-label="Youtube Backend source code on GitHub" href="https://github.com/AmarJeetSharma6802/You-tube-backend-Clone" target="_blank" class="github"><i
+              class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="grid-box">
+        <a href="https://clik-crave.vercel.app/" target="_blank"> <img
+            src="https://res.cloudinary.com/futurecoder/image/upload/v1731934126/uploads/rz0unwjxemotz1asajdq.png"
+            alt="Real Character" width="100%" class="projects-img"></a>
+        <div class="project-title">Clikcrave</div>
+        <p class="projects-para">ClikCrave is a client project, a digital marketing platform built with React for the
+          front end and an Express backend. It offers seamless integration for marketing services with a user-friendly
+          interface.</p>
+        <div class="project-icon" id="icon-project-clikcrave">
+          <a aria-label="Open the Clikcrave live site" href="https://clik-crave.vercel.app/" target="_blank" class="github"><i class="fa-solid fa-eye"></i></a>
+          <a aria-label="Clikcrave source code on GitHub" href="https://github.com/AmarJeetSharma6802" target="_blank" class="github"><i
+              class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="grid-box">
+        <a href="https://smart-hire-fronted.vercel.app/" target="_blank"><img
+            src="https://res.cloudinary.com/futurecoder/image/upload/v1731910761/uploads/mmelthdoxvnffvuhdi1c.png"
+            alt="Real Character" width="100%" class="projects-img"></a>
+        <div class="project-title">User Account Management System</div>
+        <p class="projects-para">Developed a full-stack user management system with React and Express, including
+          registration, login, password change, and profile update features. Prioritized security, efficiency, and
+          user-friendly integration.</p>
+        <div class="project-icon" id="icon-project">
+          <a aria-label="Open the User Account Management System live site" href="https://smart-hire-fronted.vercel.app/" target="_blank" class="github"><i
+              class="fa-solid fa-eye"></i></a>
+          <a aria-label="User Account Management System source code on GitHub" href="https://github.com/AmarJeetSharma6802/SmartHireFronted" target="_blank" class="github"><i
+              class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="grid-box">
+        <a href="https://portfolio-beta-dusky-34.vercel.app/" target="_blank"><img
+            src="https://res.cloudinary.com/futurecoder/image/upload/v1786101002/w9jgglx7tjvctdydzps4.png"
+            alt="Amarjeet Sharma portfolio" width="100%" class="projects-img"></a>
+        <div class="project-title">PortFolio</div>
+        <p class="projects-para"> Skilled web developer proficient in HTML, CSS, JavaScript, React, Node.js, Express,
+          MongoDB, Mongoose, TypeScript. Built dynamic, responsive e-commerce websites with seamless user experience,
+          efficient state management, and robust backend solutions.</p>
+        <div class="project-icon" id="icon-project">
+          <a aria-label="Open the PortFolio live site" href="https://portfolio-beta-dusky-34.vercel.app/" target="_blank" class="github"><i
+              class="fa-solid fa-eye"></i></a>
+          <a aria-label="PortFolio source code on GitHub" href="https://github.com/AmarJeetSharma6802/portfolioData" target="_blank" class="github"><i
+              class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="grid-box">
+        <a href="https://i-phone-clone-hazel.vercel.app/" target="_blank"><img
+            src="https://res.cloudinary.com/futurecoder/image/upload/v1731933972/uploads/fcmmnpszniymplhlh5mx.png"
+            alt="iPhone Clone" class="projects-img"></a>
+        <div class="project-title">iPhone Clone</div>
+        <p class="projects-para">Created a responsive iPhone interface with interactive controls like power, volume, and
+          timing. This project demonstrates skills in front-end design, responsive layouts, and event handling,
+          simulating core iPhone functions effectively</p>
+        <div class="project-icon" id="icon-project">
+          <a aria-label="Open the iPhone Clone live site" href="https://i-phone-clone-hazel.vercel.app/" target="_blank" class="github"><i
+              class="fa-solid fa-eye"></i></a>
+          <a aria-label="iPhone Clone source code on GitHub" href="https://github.com/AmarJeetSharma6802/I-phone-clone" target="_blank" class="github"><i
+              class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+      <div class="grid-box">
+        <a href="https://netflix-fronted-clone-git-main-amarjeetsharma6802s-projects.vercel.app/" target="_blank"><img
+            src="https://res.cloudinary.com/futurecoder/image/upload/v1731910642/uploads/tdel48c74rsin95huv7c.png"
+            alt="Netflix Clone" id="netflix" class="projects-img"></a>
+        <div class="project-title">Netflix Clone </div>
+        <p class="projects-para"> A Netflix-inspired frontend clone built using HTML, CSS, This project replicates the
+          user
+          interface of Netflix, featuring a dynamic homepage with movie thumbnails, carousels, and hover animations.</p>
+        <div class="project-icon" id="icon-project">
+          <a aria-label="Open the Netflix Clone live site" href="https://netflix-fronted-clone-git-main-amarjeetsharma6802s-projects.vercel.app/" target="_blank"
+            class="github"><i class="fa-solid fa-eye"></i></a>
+          <a aria-label="Netflix Clone source code on GitHub" href="https://github.com/AmarJeetSharma6802/netflix-fronted-clone" target="_blank" class="github"><i
+              class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="grid-box">
+        <a href="https://password-manager-dusky-two.vercel.app/" target="_blank"> <img
+            src="https://res.cloudinary.com/futurecoder/image/upload/v1749791548/y2sjyuye1oixpasoazmn.png"
+            alt="password manager" class="projects-img"></a>
+        <div class="project-title">Password manager</div>
+        <p class="projects-para">Built a secure React-based password manager with localStorage integration, password
+          visibility toggle, edit/delete features, and real-time form validations, using Toastify for feedback and
+          responsive UI design.</p>
+        <div class="project-icon" id="icon-project">
+          <a aria-label="Open the Password manager live site" href="https://password-manager-dusky-two.vercel.app/" target="_blank" class="github"><i
+              class="fa-solid fa-eye"></i></a>
+          <a aria-label="Password manager source code on GitHub" href="https://github.com/AmarJeetSharma6802/password_Manager" target="_blank" class="github"><i
+              class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+            <div class="grid-box">
+        <a href="https://anand-sharma.vercel.app/" target="_blank"> <img
+            src="https://res.cloudinary.com/futurecoder/image/upload/v1787552754/lyrj5mygy95isetxizyu.png"
+            alt="Performance Marketing Portfolio" class="projects-img"></a>
+        <div class="project-title">Performance Marketing Portfolio</div>
+        <p class="projects-para">Built a modern performance marketing portfolio showcasing Meta Ads, Google Ads, lead generation, campaign analytics, conversion optimization, client projects, marketing strategies, performance tracking, and measurable business growth.
+</p>
+        <div class="project-icon" id="icon-project">
+          <a aria-label="Open the Performance Marketing Portfolio live site" href="https://anand-sharma.vercel.app/" target="_blank" class="github"><i
+              class="fa-solid fa-eye"></i></a>
+          <a aria-label="Performance Marketing Portfolio source code on GitHub" href="https://github.com/AmarJeetSharma6802" target="_blank" class="github"><i
+              class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+        <div class="grid-box">
+        <a href="https://web-ads-fusion.vercel.app/" target="_blank"> <img
+            src="https://res.cloudinary.com/futurecoder/image/upload/v1787907142/mmhi2nkfuvlxaw9scxdq.png"
+            alt="Digital Growth & Web Solutions" class="projects-img"></a>
+        <div class="project-title">Digital Growth & Web Solutions</div>
+        <p class="projects-para">WebAdsFusion combines high-performance web development with data-driven digital marketing, delivering modern websites, Meta Ads, Google Ads, SEO, and performance strategies that help businesses attract customers, increase conversions, and scale faster.</p>
+        <div class="project-icon" id="icon-project">
+          <a aria-label="Open the Digital Growth & Web Solutions live site" href="https://web-ads-fusion.vercel.app/" target="_blank" class="github"><i
+              class="fa-solid fa-eye"></i></a>
+          <a aria-label="Digital Growth & Web Solutions source code on GitHub" href="https://github.com/AmarJeetSharma6802" target="_blank" class="github"><i
+              class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="skills" id="skills">
+    <h2 class="skills-h2">Ski<span>lls</span></h2>
+    <div class="grid-skill">
+      <div class="img-content">
+        <!-- Frontend Skills -->
+        <div class="img frontend">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML5 Logo"
+            class="skills-img">
+          <p class="skills-para">HTML</p>
+        </div>
+        <div class="img frontend">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS3 Logo"
+            id="css" class="skills-img">
+          <p class="skills-para">CSS</p>
+        </div>
+        <div class="img frontend">
+          <img src="https://mohit-portfolio.vercel.app/assets/bootstrap.8e546a2c.svg" alt="Bootstrap Logo"
+            class="skills-img">
+          <p class="skills-para">Bootstrap</p>
+        </div>
+        <div class="img frontend">
+          <img src="https://mohit-portfolio.vercel.app/assets/javascript.0656ff65.svg" alt="JavaScript Logo"
+            class="skills-img">
+          <p class="skills-para">JavaScript</p>
+        </div>
+        <div class="img frontend">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Logo"
+            class="skills-img">
+          <p class="skills-para">React</p>
+        </div>
+        <div class="img frontend">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg"
+            alt="TypeScript Logo" class="skills-img">
+          <p class="skills-para">TypeScript</p>
+        </div>
+        <!-- Backend Skills -->
+        <div class="img backend">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" alt="Node.js Logo"
+            class="skills-img">
+          <p class="skills-para">Node.js</p>
+        </div>
+        <div class="img backend">
+          <img src="https://mohit-portfolio.vercel.app/assets/express.27ec7e3d.svg" alt="Express Logo"
+            class="skills-img">
+          <p class="skills-para">Express</p>
+        </div>
+        <div class="img backend">
+          <img
+            src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg"
+            alt="MongoDB Logo" class="skills-img">
+          <p class="skills-para">MongoDB</p>
+        </div>
+        <div class="img backend">
+          <img src="https://mohit-portfolio.vercel.app/assets/postman.893a78b8.png" alt="Postman Logo"
+            class="skills-img">
+          <p class="skills-para">Postman</p>
+        </div>
+        <div class="img backend">
+          <img src="https://mohit-portfolio.vercel.app/assets/git.717a57ea.svg" alt="Git Logo" class="skills-img">
+          <p class="skills-para">Git</p>
+        </div>
+        <div class="img backend">
+          <img src="https://mohit-portfolio.vercel.app/assets/mongoose.20aad1bc.png" alt="Mongoose Logo"
+            class="skills-img">
+          <p class="skills-para">Mongoose</p>
+        </div>
+        <div class="img backend">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
+            alt="Next.js Logo" class="skills-img invert-on-dark">
+          <p class="skills-para">Next js</p>
+        </div>
+        <div class="img backend">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYUASnkyRvUnJRW94LrX7WDDB0aJB3k15O2A&s"
+            alt="GSAP logo" class="skills-img">
+          <p class="skills-para">Gsap</p>
+        </div>
+        <div class="img backend">
+          <img src="https://res.cloudinary.com/futurecoder/image/upload/v1758291655/qgfwx9ffmcggsqyu5ehc.svg"
+            alt="Docker logo" class="skills-img">
+          <p class="skills-para">Docker</p>
+        </div>
+        <div class="img backend">
+          <img src="https://res.cloudinary.com/futurecoder/image/upload/v1758291886/qupmd4r4bskrwzbptyws.png"
+            alt="Microsoft Clarity logo" class="skills-img">
+          <p class="skills-para">MicroSoft Clarity</p>
+        </div>
+        <div class="img backend">
+          <img src="https://res.cloudinary.com/futurecoder/image/upload/v1759157849/h83rmogl6dzxbqzvfmaf.png"
+            alt="Firebase" class="skills-img">
+          <p class="skills-para">Firebase</p>
+        </div>
+        <div class="img backend">
+          <img src="https://res.cloudinary.com/futurecoder/image/upload/v1765690318/f2khfjrlxhkuem0zx5k0.png"
+            alt="NextAuth logo" class="skills-img">
+          <p class="skills-para">Next Auth</p>
+        </div>
+        <div class="img backend">
+          <img src="https://res.cloudinary.com/futurecoder/image/upload/v1766727146/nt8sudq4uikccgy0jlhj.png"
+            alt="Python logo" class="skills-img">
+          <p class="skills-para">Python</p>
+        </div>
+        <div class="img backend">
+          <img src="https://res.cloudinary.com/futurecoder/image/upload/v1773383439/wcioetw7gshswmahaahs.png"
+            alt="PostgreSQL logo" class="skills-img">
+          <p class="skills-para">PostgreSQL</p>
+        </div>
+
+        <div class="img backend">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg"
+            alt="Supabase logo" class="skills-img">
+          <p class="skills-para">Supabase</p>
+        </div>
+
+           <div class="img backend">
+          <img src="https://res.cloudinary.com/futurecoder/image/upload/v1787553580/fudtwdagoaor5v3hqzrr.png"
+            alt="Sentry logo" class="skills-img">
+          <p class="skills-para">Sentry</p>
+        </div>
+
+        <div class="img backend">
+          <img src="https://res.cloudinary.com/futurecoder/image/upload/c_crop,g_north,w_1.0,h_0.76/f_auto,q_auto,w_200/v1788003351/lg-6623b70b896ab-Electron-Electronjs-removebg-preview_ra09zp.png"
+            alt="Electron logo" class="skills-img">
+          <p class="skills-para">Electron</p>
+        </div>
+
+        <div class="img backend">
+          <img src="https://api.iconify.design/fluent-emoji-flat/brain.svg"
+            alt="LLM (Large Language Models)" class="skills-img">
+          <p class="skills-para">LLM</p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <section class="contact" id="contact">
+    <div class="section-head">
+      <span class="eyebrow">Contact</span>
+      <h2 class="contact-h2">Let's work <span>together</span></h2>
+      <p class="section-sub">Have a project, a role or an idea you want built? Send me the details and I'll get back to
+        you.</p>
+    </div>
+
+    <div class="grid-from">
+      <aside class="contact-panel">
+        <span class="status-pill"><span class="pulse-dot"></span> Available for new work</span>
+        <h3>Have a project in mind?</h3>
+        <p class="panel-lead">Tell me what you're building — the stack, the timeline, the problem. I read every message
+          and usually reply the same day.</p>
+
+        <ul class="contact-list">
+          <li>
+            <span class="contact-ico"><i class="fa-regular fa-envelope"></i></span>
+            <div>
+              <small>Email</small>
+              <a class="email-link"
+                href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=amarsharma6802@gmail.com&amp;su=Project%20enquiry"
+                target="_blank" rel="noopener" data-email="amarsharma6802@gmail.com">amarsharma6802@gmail.com</a>
+            </div>
+          </li>
+          <li>
+            <span class="contact-ico"><i class="fa-solid fa-location-dot"></i></span>
+            <div>
+              <small>Location</small>
+              <strong>New Delhi, India · Remote friendly</strong>
+            </div>
+          </li>
+          <li>
+            <span class="contact-ico"><i class="fa-regular fa-clock"></i></span>
+            <div>
+              <small>Response time</small>
+              <strong>Usually within 24 hours</strong>
+            </div>
+          </li>
+          <li>
+            <span class="contact-ico"><i class="fa-solid fa-briefcase"></i></span>
+            <div>
+              <small>Open to</small>
+              <strong>Full-time · Freelance · Contract</strong>
+            </div>
+          </li>
+        </ul>
+
+        <div class="panel-socials">
+          <a href="https://github.com/AmarJeetSharma6802" target="_blank" rel="noopener" aria-label="GitHub"><i
+              class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/amarjeet-sharma-full-stack/" target="_blank" rel="noopener"
+            aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a class="email-link"
+            href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=amarsharma6802@gmail.com&amp;su=Project%20enquiry"
+            target="_blank" rel="noopener" data-email="amarsharma6802@gmail.com" aria-label="Email"><i
+              class="fa-regular fa-envelope"></i></a>
+        </div>
+      </aside>
+
+      <div class="form">
+        <!-- onsubmit="return false" is a fallback: without it a failed script would
+             let the browser GET-submit the form and dump the fields into the URL -->
+        <form id="form" method="post" action="#contact" novalidate onsubmit="return false">
+          <div class="field-row">
+            <div class="field">
+              <input type="text" id="nameId" name="name" placeholder=" " autocomplete="name">
+              <label for="nameId">Full name</label>
+              <span class="field-error"></span>
+            </div>
+            <div class="field">
+              <input type="tel" id="phone" name="phone" placeholder=" " autocomplete="tel">
+              <label for="phone">Phone number</label>
+              <span class="field-error"></span>
+            </div>
+          </div>
+
+          <div class="field">
+            <input type="email" id="email" name="email" placeholder=" " autocomplete="email">
+            <label for="email">Email address</label>
+            <span class="field-error"></span>
+          </div>
+
+          <div class="field field-grow">
+            <textarea name="message" id="message" rows="6" placeholder=" "></textarea>
+            <label for="message">Tell me about the project</label>
+            <span class="field-error"></span>
+          </div>
+
+          <button type="submit" id="submit">
+            <span class="btn-label">Send message <i class="fa-solid fa-paper-plane"></i></span>
+            <span class="btn-spinner"></span>
+          </button>
+
+          <p class="form-note"><i class="fa-solid fa-lock"></i> Your details stay private — used only to reply to you.
+          </p>
+          <p class="form-status" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="footer-para">Designed and build by Amarjeet sharma, 2024 All rights reserved.</p>
+      <div class="icon">
+        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=amarsharma6802@gmail.com&amp;su=Project%20enquiry"
+          target="_blank" rel="noopener" id="email-1" class="footer-icon email-link"
+          data-email="amarsharma6802@gmail.com"><i class="fa-regular fa-envelope" id="i"></i>Email</a>
+        <a href="https://github.com/AmarJeetSharma6802" id="github" class="footer-icon" target="_blank"
+          rel="noopener"><i class="fa-brands fa-github" id="i"></i>Github</a>
+        <a href="https://www.linkedin.com/in/amarjeet-sharma-full-stack/" id="linkedin" class="footer-icon"
+          target="_blank" rel="noopener"><i class="fa-brands fa-linkedin" id="i"></i>Linkedin</a>
+      </div>
+    </div>
+
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script defer src="index.js"></script>
+
+  <script>
+
+
+
+  </script>
+
+</body>
+
+</html>
